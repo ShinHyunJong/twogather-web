@@ -32,7 +32,7 @@ function MainWindow({ children, page }: MainWindowProps) {
           ></img>
         );
       default:
-        break;
+        return <div></div>;
     }
   };
 
@@ -47,7 +47,7 @@ function MainWindow({ children, page }: MainWindowProps) {
           ></img>
         );
       default:
-        break;
+        return <div></div>;
     }
   };
 
