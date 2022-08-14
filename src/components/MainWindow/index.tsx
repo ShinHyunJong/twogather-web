@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import type { ReactNode } from 'react';
 import Lottie from 'react-lottie';
@@ -56,12 +57,13 @@ function MainWindow({ children, page }: MainWindowProps) {
       case '/project':
         return (
           <>
-            <div className="absolute bottom-[-10px] left-[-35px] z-30">
-              <img
-                className="w-[150px]"
+            <div className="absolute bottom-[-15px] left-[-35px] z-30">
+              <Image
+                width={150}
+                height={200}
                 alt="leftCorner"
                 src="/assets/images/project/leftCorner.png"
-              ></img>
+              ></Image>
             </div>
             <div className="absolute bottom-4 left-0 z-20 w-[150px]">
               <TreeLottie></TreeLottie>
@@ -78,12 +80,14 @@ function MainWindow({ children, page }: MainWindowProps) {
       case '/project':
         return (
           <>
-            <img
-              className="absolute bottom-[-10px] right-[-20px] z-30 w-[150px]"
-              alt="leftCorner"
-              src="/assets/images/project/rightCorner.png"
-            ></img>
-
+            <div className="absolute bottom-[-15px] right-[-20px] z-30 w-[150px]">
+              <Image
+                width={200}
+                height={150}
+                alt="rightCorner"
+                src="/assets/images/project/rightCorner.png"
+              ></Image>
+            </div>
             <div className="absolute bottom-[-10px] right-[-10px] z-20 w-[150px]">
               <CactusLottie></CactusLottie>
             </div>

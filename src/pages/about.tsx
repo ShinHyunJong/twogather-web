@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import MainWindow from '@/components/MainWindow';
 import HomeLayout from '@/layouts/home';
 
@@ -69,7 +71,12 @@ const AboutPage = () => {
                   <h2 className="profileName">{x.name}</h2>
                   <div className="flex w-full flex-col border-4 border-black">
                     <div className="h-5 w-full border-b-4 border-black bg-[#d5bffd]"></div>
-                    <img alt={x.name} src={x.url}></img>
+                    <Image
+                      width={400}
+                      height={400}
+                      alt={x.name}
+                      src={x.url}
+                    ></Image>
                   </div>
                 </div>
               </div>
