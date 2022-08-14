@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router';
 import type { ReactNode } from 'react';
+import Lottie from 'react-lottie';
 import styled from 'styled-components';
+
+import treeJson from '@/public/assets/lottie/project/page1-L tree.json';
+import cactusJson from '@/public/assets/lottie/project/page1-R cactus';
 
 type MainWindowProps = {
   children: ReactNode;
@@ -18,6 +22,32 @@ const BgDiv = styled.section<BigDivProps>`
   background-position: center;
 `;
 
+export const TreeLottie = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: treeJson,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  return <Lottie options={defaultOptions} />;
+};
+
+export const CactusLottie = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: cactusJson,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  return <Lottie options={defaultOptions} />;
+};
+
 function MainWindow({ children, page }: MainWindowProps) {
   const router = useRouter();
 
@@ -25,11 +55,18 @@ function MainWindow({ children, page }: MainWindowProps) {
     switch (router.asPath) {
       case '/project':
         return (
-          <img
-            className="absolute bottom-[-10px] left-[-35px] w-[150px]"
-            alt="leftCorner"
-            src="/assets/images/project/leftCorner.png"
-          ></img>
+          <>
+            <div className="absolute bottom-[-10px] left-[-35px] z-30">
+              <img
+                className="w-[150px]"
+                alt="leftCorner"
+                src="/assets/images/project/leftCorner.png"
+              ></img>
+            </div>
+            <div className="absolute bottom-4 left-0 z-20 w-[150px]">
+              <TreeLottie></TreeLottie>
+            </div>
+          </>
         );
       default:
         return <div></div>;
@@ -40,11 +77,17 @@ function MainWindow({ children, page }: MainWindowProps) {
     switch (router.asPath) {
       case '/project':
         return (
-          <img
-            className="absolute bottom-[-10px] right-[-20px] w-[150px]"
-            alt="leftCorner"
-            src="/assets/images/project/rightCorner.png"
-          ></img>
+          <>
+            <img
+              className="absolute bottom-[-10px] right-[-20px] z-30 w-[150px]"
+              alt="leftCorner"
+              src="/assets/images/project/rightCorner.png"
+            ></img>
+
+            <div className="absolute bottom-[-10px] right-[-10px] z-20 w-[150px]">
+              <CactusLottie></CactusLottie>
+            </div>
+          </>
         );
       default:
         return <div></div>;
