@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'a바른생각';
-  src: url("https://pulit-survey-images.s3.ap-northeast-2.amazonaws.com/a%EB%B0%94%EB%A5%B8%EC%83%9D%EA%B0%81.ttf") format("ttf");
+  src: url("https://pulit-survey-images.s3.ap-northeast-2.amazonaws.com/a%EB%B0%94%EB%A5%B8%EC%83%9D%EA%B0%81.ttf") format("truetype");
 }
 
 a, a:hover, a:focus, a:active {
