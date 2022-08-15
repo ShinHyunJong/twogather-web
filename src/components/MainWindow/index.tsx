@@ -130,7 +130,7 @@ function MainWindow({ children, page }: MainWindowProps) {
               <Image
                 width={300}
                 height={250}
-                alt="leftCorner"
+                alt="leftRoadCorner"
                 src="/assets/images/roadmap/3-왼 하단 이미지.png"
               ></Image>
             </div>
@@ -146,7 +146,7 @@ function MainWindow({ children, page }: MainWindowProps) {
               <Image
                 width={200}
                 height={150}
-                alt="leftCorner"
+                alt="leftFaqCorner"
                 src="/assets/images/faq/5-왼 이미지.png"
               ></Image>
             </div>
@@ -185,7 +185,7 @@ function MainWindow({ children, page }: MainWindowProps) {
               <Image
                 width={300}
                 height={300}
-                alt="leftCorner"
+                alt="rightRoadCorner"
                 src="/assets/images/roadmap/3-오 하단 이미지.png"
               ></Image>
             </div>
@@ -201,7 +201,7 @@ function MainWindow({ children, page }: MainWindowProps) {
               <Image
                 width={200}
                 height={150}
-                alt="leftCorner"
+                alt="rightFaqCorner"
                 src="/assets/images/faq/5-오 이미지.png"
               ></Image>
             </div>
