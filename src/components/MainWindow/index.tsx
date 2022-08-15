@@ -219,7 +219,7 @@ function MainWindow({ children, page }: MainWindowProps) {
     if (router.asPath === '/partner') {
       return (
         <>
-          <div className="absolute top-2 left-4">
+          <div className="absolute top-[40px] left-4">
             <Image
               alt="leftTopCorner"
               width={70}
@@ -269,9 +269,9 @@ function MainWindow({ children, page }: MainWindowProps) {
         page={page}
       >
         {children}
-        {renderPartnerImages()}
       </BgDiv>
       {renderLeftImg()}
+      {renderPartnerImages()}
       {renderRightImg()}
     </div>
   );

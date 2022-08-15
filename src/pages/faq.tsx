@@ -78,7 +78,7 @@ function QandAPage() {
                 key={x.id}
                 className="relative flex basis-1/4 flex-col"
               >
-                <div className="relative flex h-[170px] w-full flex-col border-4 border-black bg-white px-2 pb-4 ">
+                <div className="relative flex h-[170px] w-full flex-col overflow-y-auto border-4 border-black bg-white px-2 pb-4">
                   <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                 </div>

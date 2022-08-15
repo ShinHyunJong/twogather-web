@@ -60,11 +60,11 @@ function HomeLayout({ children }: HomeLayoutProps) {
   return (
     <ReactScrollWheelHandler
       upHandler={(e) => {
-        e.preventDefault();
+        e.stopPropagation();
         routePrev();
       }}
       downHandler={(e) => {
-        e.preventDefault();
+        e.stopPropagation();
         routeNext();
       }}
     >
