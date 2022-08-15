@@ -7,7 +7,7 @@ const firstRow = [
   {
     id: 0,
     name: '음악 생활 원데이 클래스는 무엇인가요?',
-    ans: '악기 연주 원데이 클래스, 악기 관련 역사 원데이 클래스 등 여러가지 음악 문화 생황을 즐길 수 있도록 준비한 콘텐츠이며, 하루 동안 짧게 진행됩니다. ',
+    ans: '악기 연주 원데이 클래스, 악기 관련 역사 원데이 클래스 등 여러가지 음악 문화 생활을 즐길 수 있도록 준비한 콘텐츠이며, 하루 동안 짧게 진행됩니다. ',
     clicked: false,
   },
   {
@@ -69,14 +69,14 @@ function QandAPage() {
     <MainWindow page="faq">
       <div className="mx-auto flex h-full w-full flex-col items-center overflow-auto px-4 pb-4 text-center">
         <h1 className="title text-red-400">FAQ</h1>
-        <div className="flex w-full justify-center gap-4">
+        <div className="w-full justify-center gap-4 grid grid-cols-2 md:grid-cols-4">
           {row.map((x) => {
             return (
               <div
                 role="button"
                 onClick={() => click(x.id)}
                 key={x.id}
-                className="relative flex basis-1/4 flex-col"
+                className="relative flex flex-col"
               >
                 <div className="relative flex h-[170px] w-full flex-col overflow-y-auto border-4 border-black bg-white px-2 pb-4">
                   <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
@@ -101,9 +101,9 @@ function QandAPage() {
                 role="button"
                 onClick={() => click2(x.id)}
                 key={x.id}
-                className="relative flex basis-1/4 flex-col"
+                className="relative flex  basis-1/2 md:basis-1/4 flex-col"
               >
-                <div className="relative flex h-[170px] w-full flex-col border-4 border-black bg-white px-2 pb-4 ">
+                <div className="relative flex h-[170px] w-full flex-col border-4 border-black bg-white px-2 pb-4 overflow-y-auto">
                   <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                 </div>

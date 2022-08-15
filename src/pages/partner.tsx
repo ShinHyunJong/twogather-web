@@ -7,11 +7,11 @@ function PartnerPage() {
   return (
     <MainWindow page="partner">
       <div className="relative z-50 flex h-full w-full flex-col items-center overflow-y-auto overflow-x-hidden">
-        <h1 className="title text-yellow-400">참여사</h1>
+        {/* <h1 className="title text-yellow-400">참여사</h1>
         <div className="flex gap-12 text-2xl">
           <h1 className="font">큐 앤 뮤직</h1>
           <h1 className="font">런던 스트링</h1>
-        </div>
+        </div> */}
         <h1 className="title text-yellow-400">파트너</h1>
         <div className="flex w-full flex-row items-center justify-center">
           <div className="flex basis-1/3 justify-center">
@@ -33,7 +33,7 @@ function PartnerPage() {
           <div className="flex basis-1/3 justify-center">
             <Image
               width={250}
-              height={36}
+              height={53}
               src="/assets/images/partner/addd.png"
               alt="애드"
             ></Image>
@@ -51,7 +51,7 @@ function PartnerPage() {
           <div className="flex basis-1/3 justify-center">
             <Image
               width={250}
-              height={23}
+              height={43}
               src="/assets/images/partner/raonData.png"
               alt="라온데이터"
             ></Image>

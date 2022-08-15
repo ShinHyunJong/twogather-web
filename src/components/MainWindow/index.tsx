@@ -37,7 +37,7 @@ export const TreeLottie = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} />;
+  return <Lottie isClickToPauseDisabled options={defaultOptions} />;
 };
 
 export const CactusLottie = () => {
@@ -50,7 +50,7 @@ export const CactusLottie = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} />;
+  return <Lottie isClickToPauseDisabled options={defaultOptions} />;
 };
 
 export const PinkFary = () => {
@@ -63,7 +63,7 @@ export const PinkFary = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} />;
+  return <Lottie isClickToPauseDisabled options={defaultOptions} />;
 };
 
 export const PurpleFary = () => {
@@ -76,7 +76,7 @@ export const PurpleFary = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} />;
+  return <Lottie isClickToPauseDisabled options={defaultOptions} />;
 };
 export const LeftQ = () => {
   const defaultOptions = {
@@ -88,7 +88,7 @@ export const LeftQ = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} />;
+  return <Lottie isClickToPauseDisabled options={defaultOptions} />;
 };
 export const RightQ = () => {
   const defaultOptions = {
@@ -100,7 +100,7 @@ export const RightQ = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} />;
+  return <Lottie isClickToPauseDisabled options={defaultOptions} />;
 };
 function MainWindow({ children, page }: MainWindowProps) {
   const router = useRouter();

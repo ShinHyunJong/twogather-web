@@ -71,33 +71,16 @@ function BottomBar() {
   const handleSound = () => {
     if (!audioRef) return;
     if (audioRef.volume !== 0) {
-      audioRef.volume = 0;
       setIsMuted(true);
+      audioRef.volume = 0;
     } else {
-      audioRef.volume = 1;
       setIsMuted(false);
+      audioRef.volume = 1;
     }
   };
 
   return (
-    <div className="flex h-full w-full items-center justify-between overflow-x-auto text-xl font-bold">
-      {isOpenc && (
-        <div
-          role="button"
-          onClick={() => setOpenc(false)}
-          className="fixed left-[20%] bottom-[75px] z-[300] flex h-[200px] w-[250px] flex-col"
-        >
-          <div
-            id="comingSoon"
-            className="flex h-full w-full flex-col items-center justify-center border border-black bg-white"
-          >
-            <div className="relative flex h-full w-full flex-col items-center justify-center border-4 border-black bg-white px-2 pb-4">
-              <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
-              <h1 className="font text-5xl">커밍순...</h1>
-            </div>
-          </div>
-        </div>
-      )}
+    <div className="relative flex h-full w-full items-center justify-between overflow-x-auto text-xl font-bold">
       <div className="flex flex-row items-center">
         <div className="border-4 border-black">
           <div
@@ -137,8 +120,28 @@ function BottomBar() {
               className="h-auto w-14"
             ></img>
           </a>
-
-          <div role="button" onClick={() => setOpenc(!isOpenc)}>
+          <div
+            className="relative z-[300]"
+            role="button"
+            onClick={() => setOpenc(!isOpenc)}
+          >
+            {isOpenc && (
+              <div
+                role="button"
+                onClick={() => setOpenc(false)}
+                className="fixed left-[290px] bottom-[75px] z-[300] flex h-[200px] w-[250px] flex-col"
+              >
+                <div
+                  id="comingSoon"
+                  className="flex h-full w-full flex-col items-center justify-center border border-black bg-white"
+                >
+                  <div className="relative flex h-full w-full flex-col items-center justify-center border-4 border-black bg-white px-2 pb-4">
+                    <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+                    <h1 className="font text-5xl">커밍순...</h1>
+                  </div>
+                </div>
+              </div>
+            )}
             <img
               src="/assets/images/bottom/openC.png"
               alt="openC"

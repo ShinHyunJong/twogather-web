@@ -59,6 +59,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
 
   return (
     <ReactScrollWheelHandler
+      wheelConfig={[10, 50, 0.1, 0]}
       upHandler={(e) => {
         e.stopPropagation();
         routePrev();

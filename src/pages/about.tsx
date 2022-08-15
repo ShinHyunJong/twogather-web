@@ -26,7 +26,7 @@ const members = [
     name: '큐앤뮤직',
     position: '어플 파운더',
     url: '/assets/images/about/2-프로필3.png',
-    desc: '1. 패션 브랜드 런칭\n2. 현악기 경매, 유통 경력\n3. 패션 공유 앱 개발\n4. (주) 에드 스타트업 경력\n',
+    desc: '1. 패션 브랜드 런칭\n2. 현악기 경매, 유통 경력\n3. 패션 공유 앱 개발\n4. (주) 애드 스타트업 경력\n',
     clicked: false,
   },
   {
