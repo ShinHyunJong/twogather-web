@@ -2,7 +2,9 @@ import '../styles/global.css';
 
 import type { AppProps as NextAppProps } from 'next/app';
 import type { ReactNode } from 'react';
+import { RecoilRoot } from 'recoil';
 
+import Audio from '@/components/Audio';
 import Transition from '@/components/Transition';
 
 type AppProps<P = any> = {
@@ -22,13 +24,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const Layout = Component.Layout || EmptyLayout;
 
   return (
-    <>
+    <RecoilRoot>
       <Layout>
         <Transition>
           <Component {...pageProps} />
         </Transition>
+        <Audio></Audio>
       </Layout>
-    </>
+    </RecoilRoot>
   );
 };
 export default MyApp;

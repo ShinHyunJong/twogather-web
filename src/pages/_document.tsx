@@ -38,12 +38,7 @@ class MyDocument extends Document {
       // <Html lang={AppConfig.locale} className="scroll-auto">
       <Html lang={AppConfig.locale} data-theme="light">
         <Head>
-          <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-          <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false" />
-          <link
-            rel="stylesheet"
-            href="https://unpkg.com/nprogress@0.2.0/nprogress.css"
-          />
+          <meta name="viewport" content="width=1024" />
         </Head>
         <body>
           <Main />

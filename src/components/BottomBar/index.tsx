@@ -1,4 +1,11 @@
+import { format } from 'date-fns';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
+
+import audioAtom from '@/recoil/audio';
+
+const { audioPlayerRefAtom } = audioAtom;
 
 function BarItem({
   content,
@@ -8,11 +15,13 @@ function BarItem({
   onClick: () => void;
 }) {
   return (
-    <div
-      onClick={onClick}
-      className="flex w-32 cursor-pointer items-start justify-center border-4 border-black py-1"
-    >
-      {content}
+    <div className="border-4 border-black">
+      <div
+        onClick={onClick}
+        className="flex w-32 cursor-pointer items-start justify-center border-2 border-white py-1"
+      >
+        {content}
+      </div>
     </div>
   );
 }
@@ -47,22 +56,93 @@ export const routes = [
 
 function BottomBar() {
   const router = useRouter();
+  const audioRef = useRecoilValue(audioPlayerRefAtom);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isOpenc, setOpenc] = useState(false);
+
+  useEffect(() => {
+    if (audioRef?.volume === 0) {
+      setIsMuted(true);
+    } else {
+      setIsMuted(false);
+    }
+  }, [audioRef]);
+
+  const handleSound = () => {
+    if (!audioRef) return;
+    if (audioRef.volume !== 0) {
+      audioRef.volume = 0;
+      setIsMuted(true);
+    } else {
+      audioRef.volume = 1;
+      setIsMuted(false);
+    }
+  };
+
   return (
     <div className="flex h-full w-full items-center justify-between overflow-x-auto text-xl font-bold">
-      <div className="flex flex-row items-center">
+      {isOpenc && (
         <div
           role="button"
-          onClick={() => router.push('/')}
-          className="flex w-20 flex-row items-center border-4 border-black p-1"
+          onClick={() => setOpenc(false)}
+          className="fixed left-[20%] bottom-[20%] z-[300] flex h-[200px] w-[200px] flex-col"
         >
-          <img
-            className="h-6 w-auto"
-            alt="soundOn"
-            src="/assets/images/bottom/logo.png"
-          ></img>
-          시작
+          <div className="flex h-full w-full flex-col items-center justify-center border-2 border-black bg-white">
+            <div className="relative flex h-full w-full flex-col items-center justify-center border-4 border-black bg-white px-2 pb-4">
+              <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+              <h1 className="font text-5xl">커밍순</h1>
+            </div>
+          </div>
+        </div>
+      )}
+      <div className="flex flex-row items-center">
+        <div className="border-4 border-black">
+          <div
+            role="button"
+            onClick={() => router.push('/')}
+            className="flex w-20 flex-row items-center border-2 border-white py-1"
+          >
+            <img
+              className="h-6 w-auto"
+              alt="soundOn"
+              src="/assets/images/bottom/logo.png"
+            ></img>
+            시작
+          </div>
         </div>
         <div className="mx-1 h-9 w-1 bg-black"></div>
+        <div className="mx-1 flex w-[200px] flex-row gap-2">
+          <a
+            href="https://discord.gg/twogather"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="/assets/images/bottom/discord.png"
+              alt="discord"
+              className="h-auto w-14"
+            ></img>
+          </a>
+          <a
+            href="https://twitter.com/twogatther?s=21&t=A7HLVP6_56ffPNX35wP6YQ"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="/assets/images/bottom/twitter.png"
+              alt="twitter"
+              className="h-auto w-14"
+            ></img>
+          </a>
+
+          <div role="button" onClick={() => setOpenc(!isOpenc)}>
+            <img
+              src="/assets/images/bottom/openC.png"
+              alt="openC"
+              className="h-auto w-14"
+            ></img>
+          </div>
+        </div>
         <div className="flex flex-row items-center gap-2 text-xl font-bold">
           {routes.map((x) => {
             return (
@@ -79,12 +159,14 @@ function BottomBar() {
         <div className="mr-1 h-9 w-1 bg-black"></div>
         <div className="flex flex-row items-center border-4 border-black p-1">
           <img
-            className="h-6 w-auto"
-            alt="soundOn"
-            src="/assets/images/bottom/soundOn.png"
+            className="h-6 w-auto cursor-pointer"
+            onClick={handleSound}
+            alt="soundOnOff"
+            src={`/assets/images/bottom/sound${isMuted ? 'Off' : 'On'}.png`}
           ></img>
           <div className="flex flex-row text-xl font-bold">
-            <p className="mx-2">오후</p> 11:11
+            <p className="mx-2">{format(new Date(), 'aa')}</p>{' '}
+            {format(new Date(), 'hh:mm')}
           </div>
         </div>
       </div>

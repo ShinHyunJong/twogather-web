@@ -7,7 +7,7 @@ const ProjectPage = () => {
       <div className="w-full overflow-y-auto pb-4">
         <div className="mx-auto flex w-full max-w-[568px] flex-col items-center px-4 text-center">
           <h1 className="title text-yellow-400">프로젝트</h1>
-          <p className="leading-8">
+          <p className="z-50 leading-8">
             프로젝트의 이름은 Two gather로 함께, 같이 하자는 의미를 담고
             있습니다. 이번 V1 프로젝트를 통해 단단한 음악 커뮤니티를 형성하는 게
             목표입니다. V2에서는 WEB3, 그리고 평소에 음악을 즐기는 사람들을 넘어

@@ -75,7 +75,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
       >
         {children}
 
-        <div className="fixed bottom-0 h-[70px] w-full border-t-4 border-black bg-[#a0aeef] px-4 ">
+        <div className="fixed z-[60] bottom-0 h-[70px] w-full border-t-4 border-black bg-[#a0aeef] px-4">
           <BottomBar></BottomBar>
         </div>
       </BackgroundImgDiv>

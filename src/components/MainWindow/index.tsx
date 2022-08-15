@@ -5,7 +5,7 @@ import Lottie from 'react-lottie';
 import styled from 'styled-components';
 
 import treeJson from '@/public/assets/lottie/project/page1-L tree.json';
-import cactusJson from '@/public/assets/lottie/project/page1-R cactus';
+import cactusJson from '@/public/assets/lottie/project/page1-R cactus.json';
 
 type MainWindowProps = {
   children: ReactNode;
@@ -57,15 +57,15 @@ function MainWindow({ children, page }: MainWindowProps) {
       case '/project':
         return (
           <>
-            <div className="absolute bottom-[-15px] left-[-35px] z-30">
+            <div className="absolute bottom-[-20px] left-[-45px] z-30">
               <Image
-                width={150}
-                height={200}
+                width={200}
+                height={300}
                 alt="leftCorner"
                 src="/assets/images/project/leftCorner.png"
               ></Image>
             </div>
-            <div className="absolute bottom-4 left-0 z-20 w-[150px]">
+            <div className="absolute bottom-2 left-[-10px] z-20 w-[250px]">
               <TreeLottie></TreeLottie>
             </div>
           </>
@@ -82,13 +82,13 @@ function MainWindow({ children, page }: MainWindowProps) {
           <>
             <div className="absolute bottom-[-15px] right-[-20px] z-30 w-[150px]">
               <Image
-                width={200}
-                height={150}
+                width={400}
+                height={350}
                 alt="rightCorner"
                 src="/assets/images/project/rightCorner.png"
               ></Image>
             </div>
-            <div className="absolute bottom-[-10px] right-[-10px] z-20 w-[150px]">
+            <div className="absolute bottom-[-10px] right-[-50px] z-20 w-[250px]">
               <CactusLottie></CactusLottie>
             </div>
           </>

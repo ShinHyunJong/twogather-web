@@ -45,7 +45,7 @@ const Index = () => {
     lottie.loadAnimation({
       container: wrapperRef.current,
       renderer: 'svg',
-      loop: true,
+      loop: false,
       autoplay: true,
       animationData: cloud,
       rendererSettings: {
@@ -70,7 +70,7 @@ const Index = () => {
       </div>
       <div ref={wrapperRef} className="fixed h-full w-full"></div>
       {entering && (
-        <div className="fixed z-50 w-[200px]">
+        <div className="fixed z-50 w-[300px]">
           <FingerLoader></FingerLoader>
         </div>
       )}
