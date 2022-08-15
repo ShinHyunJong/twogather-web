@@ -74,9 +74,10 @@ function HomeLayout({ children }: HomeLayoutProps) {
         className="flex h-screen w-screen items-center justify-center overflow-scroll pb-[70px]"
       >
         {children}
-
-        <div className="fixed z-[60] bottom-0 h-[70px] w-full border-t-4 border-black bg-[#a0aeef] px-4">
-          <BottomBar></BottomBar>
+        <div className="fixed bottom-0 z-[60] h-[70px] w-full border-t-4 border-black bg-[#a0aeef]">
+          <div className="h-full w-full border-t-2 border-white px-4">
+            <BottomBar></BottomBar>
+          </div>
         </div>
       </BackgroundImgDiv>
     </ReactScrollWheelHandler>

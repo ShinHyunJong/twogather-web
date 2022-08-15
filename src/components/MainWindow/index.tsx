@@ -4,8 +4,12 @@ import type { ReactNode } from 'react';
 import Lottie from 'react-lottie';
 import styled from 'styled-components';
 
+import leftQJson from '@/public/assets/lottie/faq/page5-L question.json';
+import rightQJson from '@/public/assets/lottie/faq/page5-R exclamation.json';
 import treeJson from '@/public/assets/lottie/project/page1-L tree.json';
 import cactusJson from '@/public/assets/lottie/project/page1-R cactus.json';
+import pinkfaryJson from '@/public/assets/lottie/roadmap/page3-L pinkfary.json';
+import puplefaryJson from '@/public/assets/lottie/roadmap/page3-R purplefary.json';
 
 type MainWindowProps = {
   children: ReactNode;
@@ -49,6 +53,55 @@ export const CactusLottie = () => {
   return <Lottie options={defaultOptions} />;
 };
 
+export const PinkFary = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: pinkfaryJson,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  return <Lottie options={defaultOptions} />;
+};
+
+export const PurpleFary = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: puplefaryJson,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  return <Lottie options={defaultOptions} />;
+};
+export const LeftQ = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: leftQJson,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  return <Lottie options={defaultOptions} />;
+};
+export const RightQ = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: rightQJson,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  return <Lottie options={defaultOptions} />;
+};
 function MainWindow({ children, page }: MainWindowProps) {
   const router = useRouter();
 
@@ -70,6 +123,38 @@ function MainWindow({ children, page }: MainWindowProps) {
             </div>
           </>
         );
+      case '/roadmap':
+        return (
+          <>
+            <div className="absolute bottom-[-20px] left-[-63px] z-30">
+              <Image
+                width={300}
+                height={250}
+                alt="leftCorner"
+                src="/assets/images/roadmap/3-왼 하단 이미지.png"
+              ></Image>
+            </div>
+            <div className="absolute top-0 left-[-10px] z-20 w-[250px]">
+              <PinkFary></PinkFary>
+            </div>
+          </>
+        );
+      case '/faq':
+        return (
+          <>
+            <div className="absolute bottom-[-10px] left-[-5px] z-30">
+              <Image
+                width={200}
+                height={150}
+                alt="leftCorner"
+                src="/assets/images/faq/5-왼 이미지.png"
+              ></Image>
+            </div>
+            {/* <div className="absolute bottom-0 left-[-10px] z-20 w-[250px]">
+              <LeftQ></LeftQ>
+            </div> */}
+          </>
+        );
       default:
         return <div></div>;
     }
@@ -80,7 +165,7 @@ function MainWindow({ children, page }: MainWindowProps) {
       case '/project':
         return (
           <>
-            <div className="absolute bottom-[-15px] right-[-20px] z-30 w-[150px]">
+            <div className="absolute bottom-[-20px] right-[-34px] z-30 w-[250px]">
               <Image
                 width={400}
                 height={350}
@@ -91,6 +176,38 @@ function MainWindow({ children, page }: MainWindowProps) {
             <div className="absolute bottom-[-10px] right-[-50px] z-20 w-[250px]">
               <CactusLottie></CactusLottie>
             </div>
+          </>
+        );
+      case '/roadmap':
+        return (
+          <>
+            <div className="absolute bottom-[-45px] right-[-50px] z-30 w-[300px]">
+              <Image
+                width={300}
+                height={300}
+                alt="leftCorner"
+                src="/assets/images/roadmap/3-오 하단 이미지.png"
+              ></Image>
+            </div>
+            <div className="absolute top-0 right-[-10px] z-20 w-[250px]">
+              <PurpleFary></PurpleFary>
+            </div>
+          </>
+        );
+      case '/faq':
+        return (
+          <>
+            <div className="absolute bottom-[-10px] right-[-5px] z-30">
+              <Image
+                width={200}
+                height={150}
+                alt="leftCorner"
+                src="/assets/images/faq/5-오 이미지.png"
+              ></Image>
+            </div>
+            {/* <div className="absolute bottom-[-50px] right-[-10px] z-20 w-[250px]">
+              <RightQ></RightQ>
+            </div> */}
           </>
         );
       default:

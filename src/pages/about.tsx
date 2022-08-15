@@ -8,33 +8,41 @@ const members = [
   {
     id: 0,
     name: '릴민',
+    position: 'PM, 파운더',
     url: '/assets/images/about/2-프로필1.png',
-    desc: "1. 이커머스 인프라 엔지니어\n2.국내 언론사 NFT 어드바이져\n클레이튼 프로젝트 어드바이져",
+    desc: '1. 이커머스 인프라 엔지니어\n2.국내 언론사 NFT 어드바이져\n클레이튼 프로젝트 어드바이져',
     clicked: false,
   },
   {
     id: 1,
     name: '마법 아재',
+    position: '아트, 파운더',
     url: '/assets/images/about/2-프로필2.png',
-    desc: "1. 캐릭터 IP 사업 경력\n2.일러스트레이터\nNFT 아트 담당 경력\n상표 사업 경력",
+    desc: '1. 캐릭터 IP 사업 경력\n2.일러스트레이터\nNFT 아트 담당 경력\n상표 사업 경력',
     clicked: false,
   },
   {
     id: 2,
     name: '큐앤뮤직',
+    position: '어플 파운더',
     url: '/assets/images/about/2-프로필3.png',
+    desc: '1. 패션 브랜드 런칭\n2. 현악기 경매, 유통 경력\n3. 패션 공유 앱 개발\n4. (주) 에드 스타트업 경력\n',
     clicked: false,
   },
   {
     id: 3,
     name: '혼란',
+    position: '기획자',
     url: '/assets/images/about/2-프로필4.png',
+    desc: '1. 원 이더 게임 경력\n2. 블루칩 NFT 활동 다수\n3. 클레이튼 프로젝트 기획자',
     clicked: false,
   },
   {
     id: 4,
     name: '기린좋군',
+    position: 'CM',
     url: '/assets/images/about/2-프로필5.png',
+    desc: '1. 원 이더 게임 경력\n2. NFT B 엠버서더 경력\n3. CCCC운영 경력\n',
     clicked: false,
   },
 ];
@@ -105,10 +113,13 @@ const AboutPage = () => {
                 </div>
 
                 <div
-                  className={`absolute bottom-4 z-30 h-full w-full border-4 border-black bg-white transition-transform ${
+                  className={`absolute bottom-4 z-30 h-full w-full border-4 border-black bg-white py-2 px-4 text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
-                ></div>
+                >
+                  <h1 className="font text-2xl">{x.position}</h1>
+                  <p className="whitespace-pre-line">{x.desc}</p>
+                </div>
               </div>
             );
           })}
