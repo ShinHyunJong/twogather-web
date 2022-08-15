@@ -85,12 +85,15 @@ function BottomBar() {
         <div
           role="button"
           onClick={() => setOpenc(false)}
-          className="fixed left-[20%] bottom-[20%] z-[300] flex h-[200px] w-[200px] flex-col"
+          className="fixed left-[20%] bottom-[75px] z-[300] flex h-[200px] w-[250px] flex-col"
         >
-          <div className="flex h-full w-full flex-col items-center justify-center border-2 border-black bg-white">
+          <div
+            id="comingSoon"
+            className="flex h-full w-full flex-col items-center justify-center border border-black bg-white"
+          >
             <div className="relative flex h-full w-full flex-col items-center justify-center border-4 border-black bg-white px-2 pb-4">
               <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
-              <h1 className="font text-5xl">커밍순</h1>
+              <h1 className="font text-5xl">커밍순...</h1>
             </div>
           </div>
         </div>
@@ -100,10 +103,10 @@ function BottomBar() {
           <div
             role="button"
             onClick={() => router.push('/')}
-            className="flex w-20 flex-row justify-center border-2 border-white py-1"
+            className="flex w-24 flex-row items-center justify-center border-2 border-white py-1"
           >
             <img
-              className="h-6 w-auto"
+              className="h-[32px] w-auto"
               alt="soundOn"
               src="/assets/images/bottom/logo.png"
             ></img>

@@ -25,6 +25,8 @@ function Audio() {
       ref={audioRef}
       src="/assets/music/mixkit-delightful-4.mp3"
       className="hidden"
+      loop
+      controls
     ></audio>
   );
 }

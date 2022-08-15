@@ -13,37 +13,42 @@ function PartnerPage() {
           <h1 className="font">런던 스트링</h1>
         </div>
         <h1 className="title text-yellow-400">파트너</h1>
-        <h1 className="font text-2xl">커밍순...</h1>
-        <div className="absolute top-2 left-4">
+        <div className="flex flex-col gap-4">
           <Image
-            alt="leftTopCorner"
-            width={70}
-            height={60}
-            src="/assets/images/partner/leftTopPartner.png"
-          ></Image>
-        </div>
-        <div className="absolute top-[30%] left-0">
-          <Image
-            alt="leftMiddleCorner"
-            width={200}
+            width={250}
             height={55}
-            src="/assets/images/partner/leftMiddleCorner.png"
+            src="/assets/images/partner/queueAndMusic.png"
+            alt="큐뮤"
           ></Image>
-        </div>
-        <div className="absolute bottom-[-10px] left-0">
           <Image
-            alt="leftBottomCorner"
-            width={300}
-            height={264}
-            src="/assets/images/partner/leftPartnerCorner.png"
+            width={250}
+            height={36}
+            src="/assets/images/partner/londonString.png"
+            alt="런던스트링"
           ></Image>
-        </div>
-        <div className="absolute bottom-[-15px] right-[-12px]">
           <Image
-            alt="rightBottomCorner"
-            width={300}
-            height={407}
-            src="/assets/images/partner/rightPartnerCorner.png"
+            width={250}
+            height={36}
+            src="/assets/images/partner/addd.png"
+            alt="애드"
+          ></Image>
+          <Image
+            width={250}
+            height={137}
+            src="/assets/images/partner/chungwooJung.png"
+            alt="청우"
+          ></Image>
+          <Image
+            width={250}
+            height={43}
+            src="/assets/images/partner/raonData.png"
+            alt="라온데이터"
+          ></Image>
+          <Image
+            width={250}
+            height={232}
+            src="/assets/images/partner/pulit.png"
+            alt="풀릿"
           ></Image>
         </div>
       </div>

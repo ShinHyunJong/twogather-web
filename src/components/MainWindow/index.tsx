@@ -118,7 +118,7 @@ function MainWindow({ children, page }: MainWindowProps) {
                 src="/assets/images/project/leftCorner.png"
               ></Image>
             </div>
-            <div className="absolute bottom-2 left-[-10px] z-20 w-[250px]">
+            <div className="absolute bottom-0 left-[-40px] z-20 w-[350px]">
               <TreeLottie></TreeLottie>
             </div>
           </>
@@ -173,7 +173,7 @@ function MainWindow({ children, page }: MainWindowProps) {
                 src="/assets/images/project/rightCorner.png"
               ></Image>
             </div>
-            <div className="absolute bottom-[-10px] right-[-50px] z-20 w-[250px]">
+            <div className="absolute bottom-[-10px] right-[-50px] z-20 w-[350px]">
               <CactusLottie></CactusLottie>
             </div>
           </>
@@ -215,6 +215,48 @@ function MainWindow({ children, page }: MainWindowProps) {
     }
   };
 
+  const renderPartnerImages = () => {
+    if (router.asPath === '/partner') {
+      return (
+        <>
+          <div className="absolute top-2 left-4">
+            <Image
+              alt="leftTopCorner"
+              width={70}
+              height={60}
+              src="/assets/images/partner/leftTopPartner.png"
+            ></Image>
+          </div>
+          <div className="absolute top-[30%] left-0">
+            <Image
+              alt="leftMiddleCorner"
+              width={200}
+              height={55}
+              src="/assets/images/partner/leftMiddleCorner.png"
+            ></Image>
+          </div>
+          <div className="absolute bottom-[-10px] left-[-10px]">
+            <Image
+              alt="leftBottomCorner"
+              width={300}
+              height={264}
+              src="/assets/images/partner/leftPartnerCorner.png"
+            ></Image>
+          </div>
+          <div className="absolute bottom-[-15px] right-[-12px]">
+            <Image
+              alt="rightBottomCorner"
+              width={300}
+              height={407}
+              src="/assets/images/partner/rightPartnerCorner.png"
+            ></Image>
+          </div>
+        </>
+      );
+    }
+    return null;
+  };
+
   return (
     <div
       id="mainWindow"
@@ -222,11 +264,12 @@ function MainWindow({ children, page }: MainWindowProps) {
     >
       <div className="h-8 min-w-full border-b-4 border-black bg-[#d5bffd]"></div>
       <BgDiv
-        className="flex w-full justify-center overflow-y-hidden"
+        className="relative flex w-full justify-center overflow-y-hidden"
         style={{ height: `calc(100% - 32px)` }}
         page={page}
       >
         {children}
+        {renderPartnerImages()}
       </BgDiv>
       {renderLeftImg()}
       {renderRightImg()}

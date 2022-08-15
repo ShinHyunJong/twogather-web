@@ -13,6 +13,10 @@ a, a:hover, a:focus, a:active {
   box-shadow: 8px 10px 0px rgba(0,0,0,0.5);
 }
 
+#comingSoon {
+  box-shadow: -4px 3px 0px 1px rgba(0,0,0,0.5);
+}
+
 .font {
   font-family: "a바른생각";
 }

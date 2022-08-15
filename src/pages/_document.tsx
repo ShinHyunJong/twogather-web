@@ -36,7 +36,7 @@ class MyDocument extends Document {
   render() {
     return (
       // <Html lang={AppConfig.locale} className="scroll-auto">
-      <Html lang={AppConfig.locale} data-theme="light">
+      <Html lang={AppConfig.locale}>
         <Head>
           <meta name="viewport" content="width=1024" />
         </Head>
