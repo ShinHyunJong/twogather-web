@@ -43,7 +43,7 @@ function PartnerPage() {
             alt="rightBottomCorner"
             width={300}
             height={407}
-            src="/assets/images/partner/4-오 이미지.png"
+            src="/assets/images/partner/rightPartnerCorner.png"
           ></Image>
         </div>
       </div>

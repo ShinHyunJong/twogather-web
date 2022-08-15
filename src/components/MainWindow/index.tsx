@@ -147,7 +147,7 @@ function MainWindow({ children, page }: MainWindowProps) {
                 width={200}
                 height={150}
                 alt="leftFaqCorner"
-                src="/assets/images/faq/5-왼 이미지.png"
+                src="/assets/images/faq/leftFaqCorner.png"
               ></Image>
             </div>
             {/* <div className="absolute bottom-0 left-[-10px] z-20 w-[250px]">
@@ -202,7 +202,7 @@ function MainWindow({ children, page }: MainWindowProps) {
                 width={200}
                 height={150}
                 alt="rightFaqCorner"
-                src="/assets/images/faq/5-오 이미지.png"
+                src="/assets/images/faq/rightFaqCorner.png"
               ></Image>
             </div>
             {/* <div className="absolute bottom-[-50px] right-[-10px] z-20 w-[250px]">
