@@ -100,7 +100,7 @@ function BottomBar() {
           <div
             role="button"
             onClick={() => router.push('/')}
-            className="flex w-20 flex-row items-center border-2 border-white py-1"
+            className="flex w-20 flex-row justify-center border-2 border-white py-1"
           >
             <img
               className="h-6 w-auto"
