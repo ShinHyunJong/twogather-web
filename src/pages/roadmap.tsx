@@ -52,7 +52,7 @@ const RoadmapPage = () => {
         <div className="grid w-full grid-flow-col auto-rows-auto grid-cols-4 grid-rows-2 gap-4">
           {maps.map((x) => {
             return (
-              <div key={x.id} className="flex flex-col">
+              <div key={x.id} className="flex flex-col overflow-y-auto">
                 <div className="relative flex h-[170px] w-full flex-col border-4 border-black bg-white px-2 pb-4 ">
                   <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-[#d5bffd]"></div>
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>

@@ -6,7 +6,7 @@ import HomeLayout from '@/layouts/home';
 function PartnerPage() {
   return (
     <MainWindow page="partner">
-      <div className="relative flex h-full w-full flex-col items-center">
+      <div className="relative flex h-full w-full flex-col items-center overflow-x-hidden">
         <h1 className="title text-yellow-400">참여사</h1>
         <div className="flex gap-12 text-2xl">
           <h1 className="font">큐 앤 뮤직</h1>

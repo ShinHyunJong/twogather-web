@@ -10,7 +10,7 @@ const members = [
     name: '릴민',
     position: 'PM, 파운더',
     url: '/assets/images/about/2-프로필1.png',
-    desc: '1. 이커머스 인프라 엔지니어\n2.국내 언론사 NFT 어드바이져\n클레이튼 프로젝트 어드바이져',
+    desc: '1. 이커머스 인프라 엔지니어\n2.국내 언론사 NFT 어드바이져\n3.클레이튼 프로젝트 어드바이져',
     clicked: false,
   },
   {
@@ -18,7 +18,7 @@ const members = [
     name: '마법 아재',
     position: '아트, 파운더',
     url: '/assets/images/about/2-프로필2.png',
-    desc: '1. 캐릭터 IP 사업 경력\n2.일러스트레이터\nNFT 아트 담당 경력\n상표 사업 경력',
+    desc: '1. 캐릭터 IP 사업 경력\n2.일러스트레이터\n3.NFT 아트 담당 경력\n4.상표 사업 경력',
     clicked: false,
   },
   {
