@@ -19,7 +19,7 @@ function PartnerPage() {
             alt="leftTopCorner"
             width={70}
             height={60}
-            src="/assets/images/partner/4-왼 이미지3.png"
+            src="/assets/images/partner/leftTopPartner.png"
           ></Image>
         </div>
         <div className="absolute top-[30%] left-0">
@@ -27,7 +27,7 @@ function PartnerPage() {
             alt="leftMiddleCorner"
             width={200}
             height={55}
-            src="/assets/images/partner/4-왼 이미지2.png"
+            src="/assets/images/partner/leftMiddleCorner.png"
           ></Image>
         </div>
         <div className="absolute bottom-[-10px] left-0">
@@ -35,7 +35,7 @@ function PartnerPage() {
             alt="leftBottomCorner"
             width={300}
             height={264}
-            src="/assets/images/partner/4-왼 이미지1.png"
+            src="/assets/images/partner/leftPartnerCorner.png"
           ></Image>
         </div>
         <div className="absolute bottom-[-15px] right-[-12px]">

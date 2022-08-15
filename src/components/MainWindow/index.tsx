@@ -131,7 +131,7 @@ function MainWindow({ children, page }: MainWindowProps) {
                 width={300}
                 height={250}
                 alt="leftRoadCorner"
-                src="/assets/images/roadmap/3-왼 하단 이미지.png"
+                src="/assets/images/roadmap/leftRoadCorner.png"
               ></Image>
             </div>
             <div className="absolute top-0 left-[-10px] z-20 w-[250px]">
@@ -186,7 +186,7 @@ function MainWindow({ children, page }: MainWindowProps) {
                 width={300}
                 height={300}
                 alt="rightRoadCorner"
-                src="/assets/images/roadmap/3-오 하단 이미지.png"
+                src="/assets/images/roadmap/rightRoadCorner.png"
               ></Image>
             </div>
             <div className="absolute top-0 right-[-10px] z-20 w-[250px]">
