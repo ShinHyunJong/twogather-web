@@ -10,12 +10,16 @@ function Audio() {
   const audioRef = useRef(null);
 
   useEffect(() => {
+    return () => setAudioPlayer(undefined);
+  }, []);
+
+  useEffect(() => {
     if (!audioRef.current) return;
     setAudioPlayer(audioRef.current);
   }, [audioRef, setAudioPlayer]);
 
   useEffect(() => {
-    if (audioPlayer && audioPlayer.paused) {
+    if (audioPlayer) {
       audioPlayer.play();
     }
   }, [audioPlayer]);

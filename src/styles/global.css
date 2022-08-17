@@ -3,11 +3,21 @@
   src: url("/assets/fonts/a바른생각.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: '윤고딕330';
+  src: url("/assets/fonts/윤고딕330.ttf") format("truetype");
+}
+
+
 a, a:hover, a:focus, a:active {
     text-decoration: none !important;
     color: inherit !important;
     border: none !important;
  }
+
+p {
+  font-family: "윤고딕330"
+}
 
 #mainWindow {
   box-shadow: 8px 10px 0px rgba(0,0,0,0.5);

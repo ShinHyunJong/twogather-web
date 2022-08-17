@@ -3,7 +3,9 @@ import { useRouter } from 'next/router';
 import type { ReactNode } from 'react';
 import Lottie from 'react-lottie';
 import styled from 'styled-components';
+import useMedia from 'use-media';
 
+import { MOBILE_WIDTH } from '@/configs';
 import leftQJson from '@/public/assets/lottie/faq/page5-L question.json';
 import rightQJson from '@/public/assets/lottie/faq/page5-R exclamation.json';
 import treeJson from '@/public/assets/lottie/project/page1-L tree.json';
@@ -104,6 +106,7 @@ export const RightQ = () => {
 };
 function MainWindow({ children, page }: MainWindowProps) {
   const router = useRouter();
+  const isDesktop = useMedia({ minWidth: MOBILE_WIDTH });
 
   const renderLeftImg = () => {
     switch (router.asPath) {
@@ -257,22 +260,46 @@ function MainWindow({ children, page }: MainWindowProps) {
     return null;
   };
 
+  if (isDesktop) {
+    return (
+      <div
+        id="mainWindow"
+        className="relative h-[90%] w-[80%] border-4 border-black"
+      >
+        <div className="h-8 min-w-full border-b-4 border-black bg-[#d5bffd]"></div>
+        <BgDiv
+          className="relative flex w-full justify-center overflow-y-hidden"
+          style={{ height: `calc(100% - 32px)` }}
+          page={page}
+        >
+          {children}
+        </BgDiv>
+        {renderLeftImg()}
+        {renderPartnerImages()}
+        {renderRightImg()}
+      </div>
+    );
+  }
+
   return (
     <div
       id="mainWindow"
       className="relative h-[90%] w-[80%] border-4 border-black"
     >
-      <div className="h-8 min-w-full border-b-4 border-black bg-[#d5bffd]"></div>
       <BgDiv
         className="relative flex w-full justify-center overflow-y-hidden"
-        style={{ height: `calc(100% - 32px)` }}
+        style={{ height: `calc(100% - 63px)` }}
         page={page}
       >
         {children}
       </BgDiv>
-      {renderLeftImg()}
-      {renderPartnerImages()}
-      {renderRightImg()}
+      <div
+        role="button"
+        onClick={() => router.push('/m-home')}
+        className="font absolute bottom-0 flex h-16 min-w-full items-center justify-center border-2 border-black bg-[#d5bffd] text-2xl"
+      >
+        닫기
+      </div>
     </div>
   );
 }

@@ -49,7 +49,7 @@ const RoadmapPage = () => {
     <MainWindow page="roadmap">
       <div className="mx-auto flex h-full w-full flex-col items-center overflow-auto px-4 pb-4 text-center">
         <h1 className="title text-pink-400">로드맵</h1>
-        <div className="grid w-full grid-flow-col auto-rows-auto grid-cols-2 md:grid-cols-4 grid-rows-4 md:grid-rows-2 gap-4">
+        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-4">
           {maps.map((x) => {
             return (
               <div key={x.id} className="flex flex-col">

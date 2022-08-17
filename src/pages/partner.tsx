@@ -1,7 +1,58 @@
-import Image from 'next/image';
-
 import MainWindow from '@/components/MainWindow';
 import HomeLayout from '@/layouts/home';
+
+const partners = [
+  {
+    id: 0,
+    value: 'queueAndMusic',
+  },
+  {
+    id: 1,
+    value: 'londonString',
+  },
+  {
+    id: 2,
+    value: 'addd',
+  },
+  {
+    id: 3,
+    value: 'chungwooJung',
+  },
+  {
+    id: 4,
+    value: 'raonData',
+  },
+  {
+    id: 5,
+    value: 'pulit',
+  },
+  {
+    id: 6,
+    value: 'shuttle',
+  },
+  {
+    id: 7,
+    value: 'tinker',
+  },
+  {
+    id: 8,
+    value: 'question',
+  },
+];
+
+function PartnerItem({ link }: { link: string }) {
+  return (
+    <div className="flex items-center justify-center p-4">
+      {/* <Image
+        src={`/assets/images/partner/${link}.png`}
+        alt={link}
+        layout={'fill'}
+        objectFit={'contain'}
+      ></Image> */}
+      <img src={`/assets/images/partner/${link}.png`} alt={link}></img>
+    </div>
+  );
+}
 
 function PartnerPage() {
   return (
@@ -13,67 +64,10 @@ function PartnerPage() {
           <h1 className="font">런던 스트링</h1>
         </div> */}
         <h1 className="title text-yellow-400">파트너</h1>
-        <div className="flex w-full flex-row items-center justify-center">
-          <div className="flex basis-1/3 justify-center">
-            <Image
-              width={250}
-              height={55}
-              src="/assets/images/partner/queueAndMusic.png"
-              alt="큐뮤"
-            ></Image>
-          </div>
-          <div className="flex basis-1/3 justify-center">
-            <Image
-              width={250}
-              height={36}
-              src="/assets/images/partner/londonString.png"
-              alt="런던스트링"
-            ></Image>
-          </div>
-          <div className="flex basis-1/3 justify-center">
-            <Image
-              width={250}
-              height={53}
-              src="/assets/images/partner/addd.png"
-              alt="애드"
-            ></Image>
-          </div>
-        </div>
-        <div className="mt-4 flex w-full flex-row items-center justify-center">
-          <div className="flex basis-1/3 justify-center">
-            <Image
-              width={250}
-              height={137}
-              src="/assets/images/partner/chungwooJung.png"
-              alt="청우"
-            ></Image>
-          </div>
-          <div className="flex basis-1/3 justify-center">
-            <Image
-              width={250}
-              height={43}
-              src="/assets/images/partner/raonData.png"
-              alt="라온데이터"
-            ></Image>
-          </div>
-          <div className="flex basis-1/3 justify-center">
-            <Image
-              width={150}
-              height={132}
-              src="/assets/images/partner/pulit.png"
-              alt="풀릿"
-            ></Image>
-          </div>
-        </div>
-        <div className="flex w-full justify-center">
-          <div className="flex basis-1/3 justify-center">
-            <Image
-              width={150}
-              height={132}
-              src="/assets/images/partner/question.png"
-              alt="물음표"
-            ></Image>
-          </div>
+        <div className="grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-3">
+          {partners.map((x) => {
+            return <PartnerItem key={x.id} link={x.value}></PartnerItem>;
+          })}
         </div>
       </div>
     </MainWindow>

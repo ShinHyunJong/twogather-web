@@ -69,7 +69,7 @@ function QandAPage() {
     <MainWindow page="faq">
       <div className="mx-auto flex h-full w-full flex-col items-center overflow-auto px-4 pb-4 text-center">
         <h1 className="title text-red-400">FAQ</h1>
-        <div className="w-full justify-center gap-4 grid grid-cols-2 md:grid-cols-4">
+        <div className="grid w-full grid-cols-1 justify-center gap-4 md:grid-cols-4">
           {row.map((x) => {
             return (
               <div
@@ -94,16 +94,16 @@ function QandAPage() {
             );
           })}
         </div>
-        <div className="mt-4 flex w-full justify-center gap-4">
+        <div className="mt-4 flex w-full flex-col justify-center gap-4 md:flex-row">
           {secondRow.map((x) => {
             return (
               <div
                 role="button"
                 onClick={() => click2(x.id)}
                 key={x.id}
-                className="relative flex  basis-1/2 md:basis-1/4 flex-col"
+                className="relative flex basis-full flex-col md:basis-1/4"
               >
-                <div className="relative flex h-[170px] w-full flex-col border-4 border-black bg-white px-2 pb-4 overflow-y-auto">
+                <div className="relative flex h-[170px] w-full flex-col overflow-y-auto border-4 border-black bg-white px-2 pb-4">
                   <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                 </div>

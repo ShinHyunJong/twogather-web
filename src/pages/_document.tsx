@@ -37,9 +37,7 @@ class MyDocument extends Document {
     return (
       // <Html lang={AppConfig.locale} className="scroll-auto">
       <Html lang={AppConfig.locale}>
-        <Head>
-          <meta name="viewport" content="width=1024" />
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />

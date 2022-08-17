@@ -1,10 +1,13 @@
 import { useRouter } from 'next/router';
 import type { ReactNode } from 'react';
 import { useRef } from 'react';
-import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
 import styled from 'styled-components';
+import useMedia from 'use-media';
 
+import Audio from '@/components/Audio';
 import BottomBar, { routes } from '@/components/BottomBar';
+import { PencilBorder } from '@/components/PencilBox';
+import { MOBILE_WIDTH } from '@/configs';
 
 type HomeLayoutProps = {
   children: ReactNode;
@@ -30,6 +33,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
   const router = useRouter();
   const wrapperRef = useRef(null);
   const isEntrance = router.asPath === '/';
+  const isDesktop = useMedia({ minWidth: MOBILE_WIDTH });
 
   if (isEntrance) {
     return (
@@ -57,31 +61,32 @@ function HomeLayout({ children }: HomeLayoutProps) {
     router.push(nextRoute.link);
   };
 
-  return (
-    <ReactScrollWheelHandler
-      wheelConfig={[10, 50, 0.1, 0]}
-      upHandler={(e) => {
-        e.stopPropagation();
-        routePrev();
-      }}
-      downHandler={(e) => {
-        e.stopPropagation();
-        routeNext();
-      }}
-    >
+  if (isDesktop) {
+    return (
       <BackgroundImgDiv
         ref={wrapperRef}
         entrance={isEntrance}
         className="flex h-screen w-screen items-center justify-center overflow-scroll pb-[70px]"
       >
         {children}
-        <div className="fixed bottom-0 z-[60] h-[70px] w-full border-t-4 border-black bg-[#a0aeef]">
+        <PencilBorder className="fixed bottom-0 z-[60] h-[70px] w-full bg-[#a0aeef]">
           <div className="h-full w-full border-t-2 border-white px-4">
             <BottomBar></BottomBar>
           </div>
-        </div>
+          <Audio></Audio>
+        </PencilBorder>
       </BackgroundImgDiv>
-    </ReactScrollWheelHandler>
+    );
+  }
+
+  return (
+    <BackgroundImgDiv
+      ref={wrapperRef}
+      entrance={isEntrance}
+      className="flex h-screen w-screen items-center justify-center overflow-scroll pb-[70px]"
+    >
+      {children}
+    </BackgroundImgDiv>
   );
 }
 

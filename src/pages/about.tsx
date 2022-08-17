@@ -90,17 +90,19 @@ const AboutPage = () => {
     <MainWindow page="about">
       <div className="mx-auto flex h-full w-full flex-col items-center overflow-auto px-4 pb-4 text-center">
         <h1 className="title text-sky-500">팀 소개</h1>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-col gap-4 md:flex-row">
           {memberList.map((x) => {
             return (
               <div
                 role="button"
                 key={x.id}
                 onClick={() => clickMember(x.id)}
-                className="relative basis-1/5 cursor-pointer"
+                className="relative basis-1/5 cursor-pointer gap-10 md:gap-0"
               >
                 <div className="flex flex-col">
-                  <h2 className="profileName">{x.name}</h2>
+                  <h2 className="profileName text-center md:text-left">
+                    {x.name}
+                  </h2>
                   <div className="flex w-full flex-col border-4 border-black">
                     <div className="h-5 w-full border-b-4 border-black bg-[#d5bffd]"></div>
                     <Image
@@ -125,7 +127,7 @@ const AboutPage = () => {
           })}
         </div>
         <h1 className="subTitle text-sky-500">개발진</h1>
-        <div className="flex w-full flex-row gap-2">
+        <div className="flex w-full flex-col gap-8 md:flex-row md:gap-2">
           {memberInfo.map((x) => {
             return (
               <div key={x.id} className="z-30 basis-1/4">

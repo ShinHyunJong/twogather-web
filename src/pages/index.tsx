@@ -2,7 +2,10 @@ import lottie from 'lottie-web';
 import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import Lottie from 'react-lottie';
+import styled from 'styled-components';
+import useMedia from 'use-media';
 
+import { MOBILE_WIDTH } from '@/configs';
 import cloud from '@/public/assets/lottie/entrance/cloud.json';
 import enterButton from '@/public/assets/lottie/entrance/enterButton.json';
 import finger from '@/public/assets/lottie/entrance/finger.json';
@@ -14,7 +17,6 @@ export const LottieLoader = () => {
     animationData: enterButton,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
-      className: 'w-[100px]',
     },
   };
 
@@ -34,10 +36,17 @@ export const FingerLoader = () => {
   return <Lottie options={defaultOptions} />;
 };
 
+const MobileBg = styled.main`
+  background-image: url('/assets/images/background/mobileBg.png');
+  background-position: center;
+  background-size: cover;
+`;
+
 const Index = () => {
   const router = useRouter();
   const [entering, setEntering] = useState(false);
   const wrapperRef = useRef(null);
+  const isDesktop = useMedia({ minWidth: MOBILE_WIDTH });
 
   const onClickEnter = () => {
     setEntering(true);
@@ -54,17 +63,32 @@ const Index = () => {
     });
     setTimeout(() => {
       setEntering(false);
-      router.push('/project');
+      if (isDesktop) {
+        router.push('/project');
+      } else {
+        router.push('/m-home');
+      }
     }, 3000);
   };
   return (
     <div className="fixed right-0 bottom-0 flex h-screen w-screen items-center justify-center">
-      <video className="h-full w-full object-cover" autoPlay loop muted>
-        <source src="/assets/videos/bgVideo.mp4" type="video/mp4" />
-      </video>
+      {isDesktop ? (
+        <video className="h-full w-full object-cover" autoPlay loop muted>
+          <source src="/assets/videos/bgVideo.mp4" type="video/mp4" />
+        </video>
+      ) : (
+        <MobileBg className="h-full w-full"></MobileBg>
+      )}
 
-      <div className={`fixed bottom-[30%] ${entering ? 'z-0' : 'z-30'}`}>
-        <div onClick={onClickEnter} className="h-auto w-[320px]">
+      <div
+        className={`fixed ${entering ? 'z-0' : 'z-30'} ${
+          isDesktop ? 'bottom-[30%]' : 'bottom-[25%]'
+        }`}
+      >
+        <div
+          onClick={onClickEnter}
+          className={`h-auto ${isDesktop ? 'w-[320px]' : 'w-[250px]'}`}
+        >
           <LottieLoader></LottieLoader>
         </div>
       </div>

@@ -29,7 +29,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Transition>
           <Component {...pageProps} />
         </Transition>
-        <Audio></Audio>
       </Layout>
     </RecoilRoot>
   );
