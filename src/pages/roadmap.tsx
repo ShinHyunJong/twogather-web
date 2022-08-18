@@ -1,4 +1,5 @@
 import MainWindow from '@/components/MainWindow';
+import { PencilBorder, PencilBorderBottom } from '@/components/PencilBox';
 import HomeLayout from '@/layouts/home';
 
 const maps = [
@@ -52,13 +53,26 @@ const RoadmapPage = () => {
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-4">
           {maps.map((x) => {
             return (
-              <div key={x.id} className="flex flex-col">
-                <div className="relative flex h-[170px] w-full flex-col overflow-y-auto border-4 border-black bg-white px-2 pb-4">
-                  <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-[#d5bffd]"></div>
+              <PencilBorder key={x.id} className="flex flex-col">
+                <div className="relative flex h-[170px] w-full flex-col overflow-y-auto bg-white px-2 pb-4">
+                  <PencilBorderBottom className="absolute top-0 left-0 flex h-6 w-full justify-end bg-[#d5bffd] px-1">
+                    <div className="flex items-center gap-2">
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/circle.png"
+                      ></img>
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/close.png"
+                      ></img>
+                    </div>
+                  </PencilBorderBottom>
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                   <p className="z-50 mt-2 whitespace-pre-line">{x.desc}</p>
                 </div>
-              </div>
+              </PencilBorder>
             );
           })}
         </div>

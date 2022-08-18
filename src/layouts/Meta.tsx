@@ -57,6 +57,15 @@ const Meta = (props: IMetaProps) => {
           url: props.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
+          images: [
+            {
+              url: 'https://sumisa-canvas-daechi.s3.ap-northeast-2.amazonaws.com/twogather/twogather.png',
+              width: 1200,
+              height: 630,
+              alt: 'twogather-og-banner',
+              type: 'image/png',
+            },
+          ],
         }}
       />
     </>

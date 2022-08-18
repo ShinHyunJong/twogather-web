@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import useMedia from 'use-media';
 
 import { MOBILE_WIDTH } from '@/configs';
-import cloud from '@/public/assets/lottie/entrance/cloud3.json';
+import cloud from '@/public/assets/lottie/entrance/cloud4.json';
 import enterButton from '@/public/assets/lottie/entrance/enterButton.json';
 import finger from '@/public/assets/lottie/entrance/finger.json';
 

@@ -13,6 +13,8 @@ import cactusJson from '@/public/assets/lottie/project/page1-R cactus.json';
 import pinkfaryJson from '@/public/assets/lottie/roadmap/page3-L pinkfary.json';
 import puplefaryJson from '@/public/assets/lottie/roadmap/page3-R purplefary.json';
 
+import { PencilBorder, PencilBorderBottom } from '../PencilBox';
+
 type MainWindowProps = {
   children: ReactNode;
   page: string;
@@ -262,45 +264,59 @@ function MainWindow({ children, page }: MainWindowProps) {
 
   if (isDesktop) {
     return (
-      <div
-        id="mainWindow"
-        className="relative h-[90%] w-[80%] border-4 border-black"
-      >
-        <div className="h-8 min-w-full border-b-4 border-black bg-[#d5bffd]"></div>
-        <BgDiv
-          className="relative flex w-full justify-center overflow-y-hidden"
-          style={{ height: `calc(100% - 32px)` }}
-          page={page}
-        >
-          {children}
-        </BgDiv>
-        {renderLeftImg()}
-        {renderPartnerImages()}
-        {renderRightImg()}
-      </div>
+      <PencilBorder className="relative h-[90%] w-[80%]">
+        <div id="mainWindow" className="h-full w-full">
+          <div className="relative flex h-8 min-w-full justify-end bg-[#d5bffd] px-2">
+            <PencilBorderBottom className="absolute bottom-[-2px] left-0 z-10 w-full"></PencilBorderBottom>
+            <div className="flex items-center gap-2">
+              <img
+                alt="circle"
+                className="h-5 w-5"
+                src="/assets/images/background/circle.png"
+              ></img>
+              <img
+                alt="circle"
+                className="h-5 w-5"
+                src="/assets/images/background/close.png"
+              ></img>
+            </div>
+          </div>
+          <BgDiv
+            className="relative flex w-full justify-center overflow-y-hidden"
+            style={{ height: `calc(100% - 32px)` }}
+            page={page}
+          >
+            {children}
+          </BgDiv>
+          {renderLeftImg()}
+          {renderPartnerImages()}
+          {renderRightImg()}
+        </div>
+      </PencilBorder>
     );
   }
 
   return (
-    <div
-      id="mainWindow"
-      className="relative h-[90%] w-[80%] border-4 border-black"
-    >
-      <BgDiv
-        className="relative flex w-full justify-center overflow-y-hidden"
-        style={{ height: `calc(100% - 63px)` }}
-        page={page}
-      >
-        {children}
-      </BgDiv>
-      <div
-        role="button"
-        onClick={() => router.push('/m-home')}
-        className="font absolute bottom-0 flex h-16 min-w-full items-center justify-center border-2 border-black bg-[#d5bffd] text-2xl"
-      >
-        닫기
+    <PencilBorder className="h-[90%] w-[80%]">
+      <div id="mainWindow" className="relative h-full w-full">
+        <BgDiv
+          className="relative flex w-full justify-center overflow-y-hidden"
+          style={{ height: `calc(100% - 55px)` }}
+          page={page}
+        >
+          {children}
+        </BgDiv>
+        <PencilBorder
+          role="button"
+          onClick={() => router.push('/m-home')}
+          className="font absolute bottom-[-5px] z-50 h-16 w-full text-2xl"
+        >
+          <div className="flex h-full w-full items-center justify-center bg-[#d5bffd]">
+            닫기
+          </div>
+        </PencilBorder>
       </div>
-    </div>
+    </PencilBorder>
   );
 }
 

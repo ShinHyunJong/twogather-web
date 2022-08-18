@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import MainWindow from '@/components/MainWindow';
+import { PencilBorder, PencilBorderBottom } from '@/components/PencilBox';
 import HomeLayout from '@/layouts/home';
 
 const members = [
@@ -103,25 +104,43 @@ const AboutPage = () => {
                   <h2 className="profileName text-center md:text-left">
                     {x.name}
                   </h2>
-                  <div className="flex w-full flex-col border-4 border-black">
-                    <div className="h-5 w-full border-b-4 border-black bg-[#d5bffd]"></div>
+                  <PencilBorder className="flex w-full flex-col">
+                    <div className="relative top-0 left-0 flex h-5 w-full justify-end bg-[#d5bffd] px-1">
+                      <PencilBorderBottom className="absolute bottom-[-2px] left-0 z-10 w-full"></PencilBorderBottom>
+                      <div className="flex items-center gap-2">
+                        <img
+                          alt="circle"
+                          className="h-3 w-3"
+                          src="/assets/images/background/circle.png"
+                        ></img>
+                        <img
+                          alt="circle"
+                          className="h-3 w-3"
+                          src="/assets/images/background/close.png"
+                        ></img>
+                      </div>
+                    </div>
                     <Image
                       width={400}
                       height={400}
                       alt={x.name}
                       src={x.url}
                     ></Image>
-                  </div>
+                  </PencilBorder>
                 </div>
 
-                <div
-                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto border-4 border-black bg-white py-2 px-4 text-left transition-transform ${
+                <PencilBorder
+                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
                 >
-                  <h1 className="font text-2xl">{x.position}</h1>
-                  <p className="whitespace-pre-line">{x.desc}</p>
-                </div>
+                  <div className="h-full w-full bg-white">
+                    <div className="px-2 py-3">
+                      <h1 className="font text-2xl">{x.position}</h1>
+                      <p className="whitespace-pre-line">{x.desc}</p>
+                    </div>
+                  </div>
+                </PencilBorder>
               </div>
             );
           })}

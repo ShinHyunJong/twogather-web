@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { routes } from '@/components/BottomBar';
+import { PencilBorder, PencilBorderBottom } from '@/components/PencilBox';
 
 const MobileHomeWrapper = styled.div`
   background-image: url('/assets/images/background/mobileGroundBg.png');
@@ -93,21 +94,23 @@ function MobileHomePage() {
           ></Image>
         </div>
         {isOpenc && (
-          <div
+          <PencilBorder
             role="button"
             onClick={() => setOpenc(false)}
             className="fixed right-[2px] bottom-[85px] z-[300] flex h-[180px] w-[200px] flex-col"
           >
             <div
               id="comingSoon"
-              className="flex h-full w-full flex-col items-center justify-center border border-black bg-white"
+              className="flex h-full w-full flex-col items-center justify-center bg-white"
             >
-              <div className="relative flex h-full w-full flex-col items-center justify-center border-4 border-black bg-white px-2 pb-4">
-                <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+              <div className="relative flex h-full w-full flex-col items-center justify-center bg-white px-2 pb-4">
+                <div className="absolute top-0 left-0 h-6 w-full bg-red-400">
+                  <PencilBorderBottom className="absolute bottom-[-2px] left-0 z-10 w-full"></PencilBorderBottom>
+                </div>
                 <h1 className="font text-4xl">커밍순...</h1>
               </div>
             </div>
-          </div>
+          </PencilBorder>
         )}
       </div>
     </MobileHomeWrapper>

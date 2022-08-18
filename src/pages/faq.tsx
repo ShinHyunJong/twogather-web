@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import MainWindow from '@/components/MainWindow';
+import { PencilBorder, PencilBorderBottom } from '@/components/PencilBox';
 import HomeLayout from '@/layouts/home';
 
 const firstRow = [
@@ -25,7 +26,7 @@ const firstRow = [
   {
     id: 3,
     name: '악기는 어떤 악기 인가요?',
-    ans: '비올라, 바이올린 등의 종류가 있으며, 국내 대형 악기사 런던 스트링과 제휴를 맺어 고품질의 악기를 준비 했습니다\n',
+    ans: '비올라, 바이올린 등의 종류가 있으며, 국내 대형 악기사 런던 스트링과 제휴를 맺어 고품질의 악기를 준비 했습니다.',
     clicked: false,
   },
 ];
@@ -72,50 +73,105 @@ function QandAPage() {
         <div className="grid w-full grid-cols-1 justify-center gap-4 md:grid-cols-4">
           {row.map((x) => {
             return (
-              <div
+              <PencilBorder
                 role="button"
                 onClick={() => click(x.id)}
                 key={x.id}
                 className="relative flex flex-col"
               >
-                <div className="relative flex h-[170px] w-full flex-col overflow-y-auto border-4 border-black bg-white px-2 pb-4">
-                  <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+                <div className="relative flex h-[170px] w-full flex-col overflow-y-auto bg-white px-2 pb-4">
+                  <div className="absolute top-0 left-0 flex h-6 w-full justify-end bg-red-400 px-1">
+                    <PencilBorderBottom className="absolute bottom-[-2px] left-0 z-10 w-full"></PencilBorderBottom>
+                    <div className="flex items-center gap-2">
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/circle.png"
+                      ></img>
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/close.png"
+                      ></img>
+                    </div>
+                  </div>
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                 </div>
                 <div
-                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto border-4 border-black bg-white py-2 px-4 text-left transition-transform ${
+                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto bg-white py-2 px-4 text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
                 >
-                  <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+                  <div className="absolute top-0 left-0 flex h-6 w-full justify-end bg-red-400 px-1">
+                    <div className="flex items-center gap-2">
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/circle.png"
+                      ></img>
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/close.png"
+                      ></img>
+                    </div>
+                  </div>
                   <p className="mt-8 whitespace-pre-line">{x.ans}</p>
                 </div>
-              </div>
+              </PencilBorder>
             );
           })}
         </div>
         <div className="mt-4 flex w-full flex-col justify-center gap-4 md:flex-row">
           {secondRow.map((x) => {
             return (
-              <div
+              <PencilBorder
                 role="button"
                 onClick={() => click2(x.id)}
                 key={x.id}
                 className="relative flex basis-full flex-col md:basis-1/4"
               >
-                <div className="relative flex h-[170px] w-full flex-col overflow-y-auto border-4 border-black bg-white px-2 pb-4">
-                  <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+                <div className="relative flex h-[170px] w-full flex-col overflow-y-auto bg-white px-2 pb-4">
+                  <div className="absolute top-0 left-0 flex h-6 w-full justify-end bg-red-400 px-1">
+                    <PencilBorderBottom className="absolute bottom-[-2px] left-0 z-10 w-full"></PencilBorderBottom>
+                    <div className="flex items-center gap-2">
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/circle.png"
+                      ></img>
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/close.png"
+                      ></img>
+                    </div>
+                  </div>
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                 </div>
-                <div
-                  className={`absolute bottom-4 z-30 h-full w-full overflow-auto border-4 border-black bg-white py-2 px-4 text-left transition-transform ${
+                <PencilBorder
+                  className={`absolute bottom-4 z-30 h-full w-full overflow-auto bg-white py-2 px-4 text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
                 >
-                  <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+                  <div className="absolute top-0 left-0 flex h-6 w-full justify-end bg-red-400 px-1">
+                    <PencilBorderBottom className="absolute bottom-[-2px] left-0 z-10 w-full"></PencilBorderBottom>
+                    <div className="flex items-center gap-2">
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/circle.png"
+                      ></img>
+                      <img
+                        alt="circle"
+                        className="h-3 w-3"
+                        src="/assets/images/background/close.png"
+                      ></img>
+                    </div>
+                  </div>
                   <p className="mt-8 whitespace-pre-line">{x.ans}</p>
-                </div>
-              </div>
+                </PencilBorder>
+              </PencilBorder>
             );
           })}
         </div>

@@ -8,6 +8,9 @@ import Audio from '@/components/Audio';
 import BottomBar from '@/components/BottomBar';
 import { PencilBorder } from '@/components/PencilBox';
 import { MOBILE_WIDTH } from '@/configs';
+import { AppConfig } from '@/utils/AppConfig';
+
+import { Meta } from '../Meta';
 
 type HomeLayoutProps = {
   children: ReactNode;
@@ -38,6 +41,12 @@ function HomeLayout({ children }: HomeLayoutProps) {
   if (isEntrance) {
     return (
       <div className="fixed right-0 bottom-0 flex h-screen w-screen items-center justify-center">
+        <Meta
+          title={AppConfig.title}
+          description={AppConfig.description}
+          canonical="https://league.pulit.co.kr"
+        ></Meta>
+
         <video className="h-full w-full object-cover" autoPlay loop muted>
           <source src="/assets/videos/bgVideo.mp4" type="video/mp4" />
         </video>
@@ -68,9 +77,13 @@ function HomeLayout({ children }: HomeLayoutProps) {
         entrance={isEntrance}
         className="flex h-screen w-screen items-center justify-center overflow-scroll pb-[70px]"
       >
+        <Meta
+          title={AppConfig.title}
+          description={AppConfig.description}
+        ></Meta>
         {children}
-        <PencilBorder className="fixed bottom-0 z-[60] h-[70px] w-full bg-[#a0aeef]">
-          <div className="h-full w-full border-t-2 border-white px-4">
+        <PencilBorder className="fixed bottom-[-1px] z-[60] h-[70px] w-screen">
+          <div className="h-full w-full border-t-2 border-white">
             <BottomBar></BottomBar>
           </div>
           <Audio></Audio>
@@ -85,6 +98,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
       entrance={isEntrance}
       className="flex h-screen w-screen items-center justify-center pb-[70px]"
     >
+      <Meta title={AppConfig.title} description={AppConfig.description}></Meta>
       {children}
       <Audio></Audio>
     </BackgroundImgDiv>

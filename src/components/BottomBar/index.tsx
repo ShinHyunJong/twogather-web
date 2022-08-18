@@ -5,6 +5,8 @@ import { useRecoilValue } from 'recoil';
 
 import audioAtom from '@/recoil/audio';
 
+import { PencilBorder, PencilBorderBottom } from '../PencilBox';
+
 const { audioPlayerRefAtom } = audioAtom;
 
 function BarItem({
@@ -15,14 +17,14 @@ function BarItem({
   onClick: () => void;
 }) {
   return (
-    <div className="border-4 border-black">
+    <PencilBorder>
       <div
         onClick={onClick}
         className="flex w-32 cursor-pointer items-start justify-center border-2 border-white py-1"
       >
         {content}
       </div>
-    </div>
+    </PencilBorder>
   );
 }
 
@@ -80,13 +82,13 @@ function BottomBar() {
   };
 
   return (
-    <div className="relative flex h-full w-full items-center justify-between overflow-x-auto text-xl font-bold">
-      <div className="flex flex-row items-center">
-        <div className="border-4 border-black">
+    <div className="relative flex h-full w-full items-center justify-between overflow-x-auto bg-[#a0aeef] text-xl font-bold">
+      <div className="ml-2 flex flex-row items-center">
+        <PencilBorder>
           <div
             role="button"
             onClick={() => router.push('/')}
-            className="flex w-24 flex-row items-center justify-center border-2 border-white py-1"
+            className=" flex w-24 flex-row items-center justify-center border-2 border-white py-1"
           >
             <img
               className="h-[32px] w-auto"
@@ -95,8 +97,8 @@ function BottomBar() {
             ></img>
             시작
           </div>
-        </div>
-        <div className="mx-1 h-9 w-1 bg-black"></div>
+        </PencilBorder>
+        <PencilBorder className="mx-1 h-9"></PencilBorder>
         <div className="mx-1 flex w-[200px] flex-row gap-2">
           <a
             href="https://discord.gg/twogather"
@@ -126,21 +128,23 @@ function BottomBar() {
             onClick={() => setOpenc(!isOpenc)}
           >
             {isOpenc && (
-              <div
+              <PencilBorder
                 role="button"
                 onClick={() => setOpenc(false)}
                 className="fixed left-[290px] bottom-[65px] z-[300] flex h-[200px] w-[250px] flex-col"
               >
                 <div
                   id="comingSoon"
-                  className="flex h-full w-full flex-col items-center justify-center border border-black bg-white"
+                  className="flex h-full w-full flex-col items-center justify-center bg-white"
                 >
-                  <div className="relative flex h-full w-full flex-col items-center justify-center border-4 border-black bg-white px-2 pb-4">
-                    <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+                  <div className="relative flex h-full w-full flex-col items-center justify-center  bg-white px-2 pb-4">
+                    <div className="absolute top-0 left-0 h-6 w-full bg-red-400">
+                      <PencilBorderBottom className="absolute bottom-[-2px] w-full"></PencilBorderBottom>
+                    </div>
                     <h1 className="font text-5xl">커밍순...</h1>
                   </div>
                 </div>
-              </div>
+              </PencilBorder>
             )}
             <img
               src="/assets/images/bottom/openC.png"
@@ -161,9 +165,9 @@ function BottomBar() {
           })}
         </div>
       </div>
-      <div className="flex h-full flex-row items-center">
-        <div className="mx-1 h-9 w-1 bg-black"></div>
-        <div className="flex w-[150px] flex-row items-center justify-center border-4 border-black p-1 ">
+      <div className="mr-2 flex h-full flex-row items-center">
+        <PencilBorder className="mx-1 h-9"></PencilBorder>
+        <PencilBorder className="flex w-[150px] flex-row items-center justify-center p-1 ">
           <img
             className="h-6 w-auto cursor-pointer"
             onClick={handleSound}
@@ -174,7 +178,7 @@ function BottomBar() {
             <p className="mx-2">{format(new Date(), 'aa')}</p>
             <p>{format(new Date(), 'hh:mm')}</p>
           </div>
-        </div>
+        </PencilBorder>
       </div>
     </div>
   );
