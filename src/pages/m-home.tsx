@@ -57,7 +57,7 @@ function MobileHomePage() {
       <div className="fixed bottom-0 flex h-20 w-full justify-center">
         <div className="mr-1">
           <a
-            href="https://discord.gg/twogather"
+            href="https://twitter.com/twogatther?s=21&t=A7HLVP6_56ffPNX35wP6YQ"
             target="_blank"
             rel="noreferrer"
           >
@@ -70,11 +70,7 @@ function MobileHomePage() {
             ></Image>
           </a>
         </div>
-        <a
-          href="https://twitter.com/twogatther?s=21&t=A7HLVP6_56ffPNX35wP6YQ"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://discord.gg/twogather" target="_blank" rel="noreferrer">
           <Image
             width={80}
             height={80}
