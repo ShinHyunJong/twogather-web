@@ -48,20 +48,20 @@ const Meta = (props: IMetaProps) => {
         />
       </Head>
       <NextSeo
-        title={props.title}
-        description={props.description}
-        canonical={props.canonical}
+        title={AppConfig.title}
+        description={AppConfig.description}
+        canonical={AppConfig.canonical}
         openGraph={{
-          title: props.title,
-          description: props.description,
-          url: props.canonical,
+          title: AppConfig.title,
+          description: AppConfig.description,
+          url: AppConfig.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
           images: [
             {
               url: 'https://sumisa-canvas-daechi.s3.ap-northeast-2.amazonaws.com/twogather/twogather.png',
               width: 1200,
-              height: 630,
+              height: 600,
               alt: 'twogather-og-banner',
               type: 'image/png',
             },

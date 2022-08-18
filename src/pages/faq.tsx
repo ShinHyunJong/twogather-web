@@ -97,12 +97,13 @@ function QandAPage() {
                   </div>
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                 </div>
-                <div
-                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto bg-white py-2 px-4 text-left transition-transform ${
+                <PencilBorder
+                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
                 >
                   <div className="absolute top-0 left-0 flex h-6 w-full justify-end bg-red-400 px-1">
+                    <PencilBorderBottom className="absolute bottom-[-2px] left-0 z-10 w-full"></PencilBorderBottom>
                     <div className="flex items-center gap-2">
                       <img
                         alt="circle"
@@ -116,8 +117,10 @@ function QandAPage() {
                       ></img>
                     </div>
                   </div>
-                  <p className="mt-8 whitespace-pre-line">{x.ans}</p>
-                </div>
+                  <div className="h-full w-full bg-white py-3 px-2">
+                    <p className="mt-8 whitespace-pre-line">{x.ans}</p>
+                  </div>
+                </PencilBorder>
               </PencilBorder>
             );
           })}
