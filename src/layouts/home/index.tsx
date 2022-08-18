@@ -36,6 +36,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
   const router = useRouter();
   const wrapperRef = useRef(null);
   const isEntrance = router.asPath === '/';
+  const isMobileHome = router.asPath === '/m-home';
   const isDesktop = useMedia({ minWidth: MOBILE_WIDTH });
 
   if (isEntrance) {
@@ -92,16 +93,31 @@ function HomeLayout({ children }: HomeLayoutProps) {
     );
   }
 
+  const renderMobile = () => {
+    if (isMobileHome) {
+      return <>{children}</>;
+    }
+
+    return (
+      <BackgroundImgDiv
+        ref={wrapperRef}
+        entrance={isEntrance}
+        className="flex h-screen w-screen items-center justify-center pb-[70px]"
+      >
+        <Meta
+          title={AppConfig.title}
+          description={AppConfig.description}
+        ></Meta>
+        {children}
+      </BackgroundImgDiv>
+    );
+  };
+
   return (
-    <BackgroundImgDiv
-      ref={wrapperRef}
-      entrance={isEntrance}
-      className="flex h-screen w-screen items-center justify-center pb-[70px]"
-    >
-      <Meta title={AppConfig.title} description={AppConfig.description}></Meta>
-      {children}
+    <>
+      {renderMobile()}
       <Audio></Audio>
-    </BackgroundImgDiv>
+    </>
   );
 }
 

@@ -7,7 +7,7 @@ const ProjectPage = () => {
       <div className="z-50 w-full overflow-y-auto pb-4">
         <div className="mx-auto flex w-full max-w-[575px] flex-col items-center px-4 text-center">
           <h1 className="title text-yellow-400">프로젝트</h1>
-          <p className="leading-8">
+          <p className="break-all leading-8">
             프로젝트의 이름은 Two gather로 함께, 같이 하자는 의미를 담고
             있습니다. 이번 V1 프로젝트를 통해 단단한 음악 커뮤니티를 형성하는 게
             목표입니다. V2에서는 WEB3, 그리고 평소에 음악을 즐기는 사람들을 넘어
@@ -20,8 +20,7 @@ const ProjectPage = () => {
             통해서 수익을 창출할 수 있다는 점이 WEB3 가 지향하는 방향과 굉장히
             유사한 성향을 띄고 있습니다. 해당 플랫폼을 통해 자신의 음악 콘텐츠에
             가치를 부여함으로써, WEB3나 음악을 평소에 즐기는 사람들 뿐만 아닌,
-            세상이 음악을 소비하는 방식을 바꿀 수 있을 것이라고 <br></br>{' '}
-            자부합니다.
+            세상이 음악을 소비하는 방식을 바꿀 수 있을 것이라고 자부합니다.
           </p>
         </div>
       </div>
