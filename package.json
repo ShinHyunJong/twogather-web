@@ -24,6 +24,7 @@
     "lottie-web": "^5.9.6",
     "next": "^12.2.2",
     "next-seo": "^5.4.0",
+    "nextjs-google-analytics": "^2.0.0",
     "react": "^18.2.0",
     "react-awesome-slider": "^4.1.0",
     "react-dom": "^18.2.0",

@@ -1,6 +1,7 @@
 import '../styles/global.css';
 
 import type { AppProps as NextAppProps } from 'next/app';
+import { GoogleAnalytics, usePageViews } from 'nextjs-google-analytics';
 import type { ReactNode } from 'react';
 import { RecoilRoot } from 'recoil';
 
@@ -25,16 +26,20 @@ function EmptyLayout({ children }: { children: ReactNode }) {
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const Layout = Component.Layout || EmptyLayout;
+  usePageViews();
 
   return (
-    <RecoilRoot>
-      <Layout>
-        <Transition>
-          <Component {...pageProps} />
-        </Transition>
-      </Layout>
-      <Audio></Audio>
-    </RecoilRoot>
+    <>
+      <GoogleAnalytics />
+      <RecoilRoot>
+        <Layout>
+          <Transition>
+            <Component {...pageProps} />
+          </Transition>
+        </Layout>
+        <Audio></Audio>
+      </RecoilRoot>
+    </>
   );
 };
 export default MyApp;
