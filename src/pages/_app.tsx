@@ -4,6 +4,7 @@ import type { AppProps as NextAppProps } from 'next/app';
 import type { ReactNode } from 'react';
 import { RecoilRoot } from 'recoil';
 
+import Audio from '@/components/Audio';
 import Transition from '@/components/Transition';
 
 type AppProps<P = any> = {
@@ -32,6 +33,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <Component {...pageProps} />
         </Transition>
       </Layout>
+      <Audio></Audio>
     </RecoilRoot>
   );
 };

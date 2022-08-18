@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import styled from 'styled-components';
 import useMedia from 'use-media';
 
-import Audio from '@/components/Audio';
 import BottomBar from '@/components/BottomBar';
 import { PencilBorder } from '@/components/PencilBox';
 import { MOBILE_WIDTH } from '@/configs';
@@ -36,7 +35,6 @@ function HomeLayout({ children }: HomeLayoutProps) {
   const router = useRouter();
   const wrapperRef = useRef(null);
   const isEntrance = router.asPath === '/';
-  const isMobileHome = router.asPath === '/m-home';
   const isDesktop = useMedia({ minWidth: MOBILE_WIDTH });
 
   if (isEntrance) {
@@ -87,37 +85,20 @@ function HomeLayout({ children }: HomeLayoutProps) {
           <div className="h-full w-full border-t-2 border-white">
             <BottomBar></BottomBar>
           </div>
-          <Audio></Audio>
         </PencilBorder>
       </BackgroundImgDiv>
     );
   }
 
-  const renderMobile = () => {
-    if (isMobileHome) {
-      return <div className="h-screen w-screen">{children}</div>;
-    }
-
-    return (
-      <BackgroundImgDiv
-        ref={wrapperRef}
-        entrance={isEntrance}
-        className="flex h-screen w-screen items-center justify-center pb-[70px]"
-      >
-        <Meta
-          title={AppConfig.title}
-          description={AppConfig.description}
-        ></Meta>
-        {children}
-      </BackgroundImgDiv>
-    );
-  };
-
   return (
-    <>
-      {renderMobile()}
-      <Audio></Audio>
-    </>
+    <BackgroundImgDiv
+      ref={wrapperRef}
+      entrance={isEntrance}
+      className="flex h-screen w-screen items-center justify-center pb-[70px]"
+    >
+      <Meta title={AppConfig.title} description={AppConfig.description}></Meta>
+      {children}
+    </BackgroundImgDiv>
   );
 }
 

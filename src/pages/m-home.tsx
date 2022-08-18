@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 import { routes } from '@/components/BottomBar';
 import { PencilBorder, PencilBorderBottom } from '@/components/PencilBox';
-import HomeLayout from '@/layouts/home';
 
 const MobileHomeWrapper = styled.div`
   background-image: url('/assets/images/background/mobileGroundBg.png');
@@ -42,6 +41,7 @@ const RouteIcon = ({
 
 function MobileHomePage() {
   const [isOpenc, setOpenc] = useState(false);
+
   return (
     <MobileHomeWrapper className="relative h-full w-full overflow-y-hidden py-16">
       <div className="grid auto-cols-min grid-flow-row grid-cols-3 gap-3 px-4">
@@ -117,7 +117,5 @@ function MobileHomePage() {
     </MobileHomeWrapper>
   );
 }
-
-MobileHomePage.Layout = HomeLayout;
 
 export default MobileHomePage;

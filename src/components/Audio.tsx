@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 
 import audioAtom from '@/recoil/audio';
 
 const { audioPlayerRefAtom } = audioAtom;
 
 function Audio() {
-  const [audioPlayer, setAudioPlayer] = useRecoilState(audioPlayerRefAtom);
+  const setAudioPlayer = useSetRecoilState(audioPlayerRefAtom);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -17,12 +17,6 @@ function Audio() {
     if (!audioRef.current) return;
     setAudioPlayer(audioRef.current);
   }, [audioRef, setAudioPlayer]);
-
-  useEffect(() => {
-    if (audioPlayer) {
-      audioPlayer.play();
-    }
-  }, [audioPlayer]);
 
   return (
     <audio

@@ -2,6 +2,7 @@ import lottie from 'lottie-web';
 import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import Lottie from 'react-lottie';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import useMedia from 'use-media';
 
@@ -9,6 +10,7 @@ import { MOBILE_WIDTH } from '@/configs';
 import cloud from '@/public/assets/lottie/entrance/cloud4.json';
 import enterButton from '@/public/assets/lottie/entrance/enterButton.json';
 import finger from '@/public/assets/lottie/entrance/finger.json';
+import audioAtom from '@/recoil/audio';
 
 export const LottieLoader = () => {
   const defaultOptions = {
@@ -47,6 +49,7 @@ const Index = () => {
   const [entering, setEntering] = useState(false);
   const wrapperRef = useRef(null);
   const isDesktop = useMedia({ minWidth: MOBILE_WIDTH });
+  const audioPlayer = useRecoilValue(audioAtom.audioPlayerRefAtom);
 
   const onClickEnter = () => {
     setEntering(true);
@@ -61,6 +64,7 @@ const Index = () => {
         preserveAspectRatio: 'xMidYMid slice',
       },
     });
+    audioPlayer?.play();
     setTimeout(() => {
       setEntering(false);
       if (isDesktop) {
