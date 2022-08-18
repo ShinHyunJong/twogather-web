@@ -162,7 +162,7 @@ function BottomBar() {
         </div>
       </div>
       <div className="flex h-full flex-row items-center">
-        <div className="mr-1 h-9 w-1 bg-black"></div>
+        <div className="mx-1 h-9 w-1 bg-black"></div>
         <div className="flex w-[150px] flex-row items-center justify-center border-4 border-black p-1 ">
           <img
             className="h-6 w-auto cursor-pointer"
