@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import useMedia from 'use-media';
 
 import Audio from '@/components/Audio';
-import BottomBar, { routes } from '@/components/BottomBar';
+import BottomBar from '@/components/BottomBar';
 import { PencilBorder } from '@/components/PencilBox';
 import { MOBILE_WIDTH } from '@/configs';
 
@@ -45,21 +45,21 @@ function HomeLayout({ children }: HomeLayoutProps) {
     );
   }
 
-  const routePrev = () => {
-    const targetRouteIndex = routes.findIndex((x) => x.link === router.asPath);
-    if (targetRouteIndex === -1) return;
-    const prevRoute = routes[targetRouteIndex - 1];
-    if (!prevRoute) return;
-    router.push(prevRoute.link);
-  };
+  // const routePrev = () => {
+  //   const targetRouteIndex = routes.findIndex((x) => x.link === router.asPath);
+  //   if (targetRouteIndex === -1) return;
+  //   const prevRoute = routes[targetRouteIndex - 1];
+  //   if (!prevRoute) return;
+  //   router.push(prevRoute.link);
+  // };
 
-  const routeNext = () => {
-    const targetRouteIndex = routes.findIndex((x) => x.link === router.asPath);
-    if (targetRouteIndex === -1) return;
-    const nextRoute = routes[targetRouteIndex + 1];
-    if (!nextRoute) return;
-    router.push(nextRoute.link);
-  };
+  // const routeNext = () => {
+  //   const targetRouteIndex = routes.findIndex((x) => x.link === router.asPath);
+  //   if (targetRouteIndex === -1) return;
+  //   const nextRoute = routes[targetRouteIndex + 1];
+  //   if (!nextRoute) return;
+  //   router.push(nextRoute.link);
+  // };
 
   if (isDesktop) {
     return (
@@ -83,8 +83,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
     <BackgroundImgDiv
       ref={wrapperRef}
       entrance={isEntrance}
-      id="app"
-      className="flex items-center justify-center overflow-scroll pb-[70px]"
+      className="flex h-screen w-screen items-center justify-center pb-[70px]"
     >
       {children}
       <Audio></Audio>
