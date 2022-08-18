@@ -2,7 +2,6 @@ import Image from 'next/image';
 import router from 'next/router';
 import styled from 'styled-components';
 
-import Audio from '@/components/Audio';
 import { routes } from '@/components/BottomBar';
 
 const MobileHomeWrapper = styled.div`
@@ -53,7 +52,6 @@ function MobileHomePage() {
           );
         })}
       </div>
-      <Audio></Audio>
       <div className="fixed bottom-0 flex h-20 w-full justify-center">
         <div className="mr-1">
           <Image

@@ -86,6 +86,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
       className="flex h-screen w-screen items-center justify-center overflow-scroll pb-[70px]"
     >
       {children}
+      <Audio></Audio>
     </BackgroundImgDiv>
   );
 }
