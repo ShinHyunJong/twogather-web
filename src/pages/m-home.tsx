@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import { routes } from '@/components/BottomBar';
 import { PencilBorder, PencilBorderBottom } from '@/components/PencilBox';
+import HomeLayout from '@/layouts/home';
 
 const MobileHomeWrapper = styled.div`
   background-image: url('/assets/images/background/mobileGroundBg.png');
@@ -116,5 +117,7 @@ function MobileHomePage() {
     </MobileHomeWrapper>
   );
 }
+
+MobileHomePage.Layout = HomeLayout;
 
 export default MobileHomePage;
