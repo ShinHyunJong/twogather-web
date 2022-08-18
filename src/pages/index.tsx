@@ -71,7 +71,7 @@ const Index = () => {
     }, 3000);
   };
   return (
-    <div className="app fixed right-0 bottom-0 flex items-center justify-center">
+    <div className="fixed right-0 bottom-0 flex h-full w-full items-center justify-center">
       {isDesktop ? (
         <video className="h-full w-full object-cover" autoPlay loop muted>
           <source src="/assets/videos/bgVideo.mp4" type="video/mp4" />

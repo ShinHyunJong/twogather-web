@@ -83,7 +83,8 @@ function HomeLayout({ children }: HomeLayoutProps) {
     <BackgroundImgDiv
       ref={wrapperRef}
       entrance={isEntrance}
-      className="flex h-screen w-screen items-center justify-center overflow-scroll pb-[70px]"
+      id="app"
+      className="flex items-center justify-center overflow-scroll pb-[70px]"
     >
       {children}
       <Audio></Audio>
