@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import router from 'next/router';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import { routes } from '@/components/BottomBar';
@@ -38,6 +39,7 @@ const RouteIcon = ({
 };
 
 function MobileHomePage() {
+  const [isOpenc, setOpenc] = useState(false);
   return (
     <MobileHomeWrapper className="relative h-full w-full overflow-y-hidden py-16">
       <div className="grid auto-cols-min grid-flow-row grid-cols-3 gap-3 px-4">
@@ -54,28 +56,63 @@ function MobileHomePage() {
       </div>
       <div className="fixed bottom-0 flex h-20 w-full justify-center">
         <div className="mr-1">
+          <a
+            href="https://discord.gg/twogather"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              width={80}
+              height={80}
+              layout="fixed"
+              src="/assets/images/bottom/twitterMobile.png"
+              alt="twitterMobile"
+            ></Image>
+          </a>
+        </div>
+        <a
+          href="https://twitter.com/twogatther?s=21&t=A7HLVP6_56ffPNX35wP6YQ"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Image
             width={80}
             height={80}
             layout="fixed"
-            src="/assets/images/bottom/twitterMobile.png"
-            alt="twitterMobile"
+            src="/assets/images/bottom/discordMobile.png"
+            alt="discordMobile"
+          ></Image>
+        </a>
+        <div
+          className="relative z-[300]"
+          role="button"
+          onClick={() => setOpenc(!isOpenc)}
+        >
+          <Image
+            width={80}
+            height={80}
+            src="/assets/images/bottom/openCMobile.png"
+            alt="openCMobile"
+            layout="fixed"
           ></Image>
         </div>
-        <Image
-          width={80}
-          height={80}
-          layout="fixed"
-          src="/assets/images/bottom/discordMobile.png"
-          alt="discordMobile"
-        ></Image>
-        <Image
-          width={80}
-          height={80}
-          src="/assets/images/bottom/openCMobile.png"
-          alt="openCMobile"
-          layout="fixed"
-        ></Image>
+        {isOpenc && (
+          <div
+            role="button"
+            onClick={() => setOpenc(false)}
+            className="fixed right-[2px] bottom-[85px] z-[300] flex h-[180px] w-[200px] flex-col"
+          >
+            <div
+              id="comingSoon"
+              className="flex h-full w-full flex-col items-center justify-center border border-black bg-white"
+            >
+              <div className="relative flex h-full w-full flex-col items-center justify-center border-4 border-black bg-white px-2 pb-4">
+                <div className="absolute top-0 left-0 h-6 w-full border-b-4 border-black bg-red-400"></div>
+                <h1 className="font text-4xl">커밍순...</h1>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </MobileHomeWrapper>
   );
