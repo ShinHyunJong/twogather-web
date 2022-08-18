@@ -115,7 +115,7 @@ const AboutPage = () => {
                 </div>
 
                 <div
-                  className={`absolute bottom-4 z-30 h-full w-full border-4 border-black bg-white py-2 px-4 text-left transition-transform ${
+                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto border-4 border-black bg-white py-2 px-4 text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
                 >

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import useMedia from 'use-media';
 
 import { MOBILE_WIDTH } from '@/configs';
-import cloud from '@/public/assets/lottie/entrance/cloud.json';
+import cloud from '@/public/assets/lottie/entrance/cloud3.json';
 import enterButton from '@/public/assets/lottie/entrance/enterButton.json';
 import finger from '@/public/assets/lottie/entrance/finger.json';
 
@@ -71,7 +71,7 @@ const Index = () => {
     }, 3000);
   };
   return (
-    <div className="fixed right-0 bottom-0 flex h-screen w-screen items-center justify-center">
+    <div className="app fixed right-0 bottom-0 flex items-center justify-center">
       {isDesktop ? (
         <video className="h-full w-full object-cover" autoPlay loop muted>
           <source src="/assets/videos/bgVideo.mp4" type="video/mp4" />

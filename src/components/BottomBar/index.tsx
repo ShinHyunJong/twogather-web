@@ -129,7 +129,7 @@ function BottomBar() {
               <div
                 role="button"
                 onClick={() => setOpenc(false)}
-                className="fixed left-[290px] bottom-[75px] z-[300] flex h-[200px] w-[250px] flex-col"
+                className="fixed left-[290px] bottom-[65px] z-[300] flex h-[200px] w-[250px] flex-col"
               >
                 <div
                   id="comingSoon"

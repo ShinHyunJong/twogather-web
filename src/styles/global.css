@@ -8,6 +8,12 @@
   src: url("/assets/fonts/윤고딕330.ttf") format("truetype");
 }
 
+#app {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+}
+
 
 a, a:hover, a:focus, a:active {
     text-decoration: none !important;
