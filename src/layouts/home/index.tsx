@@ -95,7 +95,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
 
   const renderMobile = () => {
     if (isMobileHome) {
-      return <>{children}</>;
+      return <div className="h-screen w-screen">{children}</div>;
     }
 
     return (
