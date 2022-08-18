@@ -163,7 +163,7 @@ function BottomBar() {
       </div>
       <div className="flex h-full flex-row items-center">
         <div className="mr-1 h-9 w-1 bg-black"></div>
-        <div className="flex flex-row items-center border-4 border-black p-1">
+        <div className="flex w-[150px] flex-row items-center justify-center border-4 border-black p-1 ">
           <img
             className="h-6 w-auto cursor-pointer"
             onClick={handleSound}
@@ -171,8 +171,8 @@ function BottomBar() {
             src={`/assets/images/bottom/sound${isMuted ? 'Off' : 'On'}.png`}
           ></img>
           <div className="flex flex-row text-xl font-bold">
-            <p className="mx-2">{format(new Date(), 'aa')}</p>{' '}
-            {format(new Date(), 'hh:mm')}
+            <p className="mx-2">{format(new Date(), 'aa')}</p>
+            <p>{format(new Date(), 'hh:mm')}</p>
           </div>
         </div>
       </div>
