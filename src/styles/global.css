@@ -38,6 +38,10 @@ p {
   @apply text-5xl mt-4 mb-8;
 }
 
+.mobileText {
+  -webkit-text-stroke: 1px white; /* width and color */
+}
+
 .subTitle {
   font-family: "a바른생각";
   text-shadow: 0px 3px 0px black;

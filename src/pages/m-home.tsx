@@ -32,7 +32,7 @@ const RouteIcon = ({
         src={`/assets/images/entrance${value}Icon.png`}
         alt="projectIcon"
       ></Image>
-      <h1 className="font mt-1 text-xl">{text}</h1>
+      <h1 className="font mobileText mt-1 text-xl">{text}</h1>
     </div>
   );
 };
@@ -40,7 +40,7 @@ const RouteIcon = ({
 function MobileHomePage() {
   return (
     <MobileHomeWrapper className="relative h-full w-full overflow-y-hidden py-16">
-      <div className="grid auto-cols-min grid-flow-row grid-cols-3 gap-3">
+      <div className="grid auto-cols-min grid-flow-row grid-cols-3 gap-3 px-4">
         {routes.map((x) => {
           return (
             <RouteIcon
