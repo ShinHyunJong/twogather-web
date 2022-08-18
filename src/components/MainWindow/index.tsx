@@ -153,9 +153,9 @@ function MainWindow({ children, page }: MainWindowProps) {
                 src="/assets/images/faq/leftFaqCorner.png"
               ></Image>
             </div>
-            {/* <div className="absolute bottom-0 left-[-10px] z-20 w-[250px]">
+            <div className="absolute bottom-10 left-[-10px] z-20 w-[350px]">
               <LeftQ></LeftQ>
-            </div> */}
+            </div>
           </>
         );
       default:
@@ -208,9 +208,9 @@ function MainWindow({ children, page }: MainWindowProps) {
                 src="/assets/images/faq/rightFaqCorner.png"
               ></Image>
             </div>
-            {/* <div className="absolute bottom-[-50px] right-[-10px] z-20 w-[250px]">
+            <div className="absolute bottom-[-10px] right-[-10px] z-20 w-[350px]">
               <RightQ></RightQ>
-            </div> */}
+            </div>
           </>
         );
       default:

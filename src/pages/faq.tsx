@@ -67,7 +67,7 @@ function QandAPage() {
   };
   return (
     <MainWindow page="faq">
-      <div className="mx-auto flex h-full w-full flex-col items-center overflow-auto px-4 pb-4 text-center">
+      <div className="z-50 mx-auto flex h-full w-full flex-col items-center overflow-auto px-4 pb-4 text-center">
         <h1 className="title text-red-400">FAQ</h1>
         <div className="grid w-full grid-cols-1 justify-center gap-4 md:grid-cols-4">
           {row.map((x) => {
