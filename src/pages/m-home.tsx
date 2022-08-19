@@ -43,7 +43,7 @@ function MobileHomePage() {
   const [isOpenc, setOpenc] = useState(false);
 
   return (
-    <MobileHomeWrapper className="relative h-full w-full overflow-y-hidden py-16">
+    <MobileHomeWrapper className="relative h-full w-full overflow-y-auto pt-16 pb-32">
       <div className="grid auto-cols-min grid-flow-row grid-cols-3 gap-3 px-4">
         {routes.map((x) => {
           return (
