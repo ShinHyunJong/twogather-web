@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import router from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
 import { routes } from '@/components/BottomBar';
 import { PencilBorder, PencilBorderBottom } from '@/components/PencilBox';
+import { audioPlayerRefAtom } from '@/recoil/audio/atom';
 
 const MobileHomeWrapper = styled.div`
   background-image: url('/assets/images/background/mobileGroundBg.png');
@@ -41,6 +43,28 @@ const RouteIcon = ({
 
 function MobileHomePage() {
   const [isOpenc, setOpenc] = useState(false);
+  const audioRef = useRecoilValue(audioPlayerRefAtom);
+  const [isMuted, setIsMuted] = useState(false);
+
+  useEffect(() => {
+    if (audioRef?.volume === 0) {
+      setIsMuted(true);
+    } else {
+      setIsMuted(false);
+    }
+  }, [audioRef]);
+
+  const handleSound = (e) => {
+    e.stopPropagation();
+    if (!audioRef) return;
+    if (audioRef.volume !== 0) {
+      setIsMuted(true);
+      audioRef.volume = 0;
+    } else {
+      setIsMuted(false);
+      audioRef.volume = 1;
+    }
+  };
 
   return (
     <MobileHomeWrapper className="relative h-full w-full overflow-y-auto pt-16 pb-32">
@@ -56,6 +80,7 @@ function MobileHomePage() {
           );
         })}
       </div>
+
       <div className="fixed bottom-0 flex h-20 w-full justify-center">
         <div className="mr-1">
           <a
@@ -86,6 +111,16 @@ function MobileHomePage() {
           role="button"
           onClick={() => setOpenc(!isOpenc)}
         >
+          <div className="absolute right-0 bottom-[80px] z-[500]">
+            <img
+              className="h-auto w-20 cursor-pointer"
+              onClick={handleSound}
+              alt="soundOnOff"
+              src={`/assets/images/background/mobileSound${
+                isMuted ? 'Off' : 'On'
+              }.png`}
+            ></img>
+          </div>
           <Image
             width={80}
             height={80}
