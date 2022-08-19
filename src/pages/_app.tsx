@@ -7,6 +7,8 @@ import { RecoilRoot } from 'recoil';
 
 import Audio from '@/components/Audio';
 import Transition from '@/components/Transition';
+import { Meta } from '@/layouts/Meta';
+import { AppConfig } from '@/utils/AppConfig';
 
 type AppProps<P = any> = {
   Component: P;
@@ -31,6 +33,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <GoogleAnalytics />
+      <Meta
+        title={AppConfig.title}
+        description={AppConfig.description}
+        canonical="https://league.pulit.co.kr"
+      ></Meta>
       <RecoilRoot>
         <Layout>
           <Transition>
