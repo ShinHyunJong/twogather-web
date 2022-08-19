@@ -98,7 +98,7 @@ function QandAPage() {
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                 </div>
                 <PencilBorder
-                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto text-left transition-transform ${
+                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto bg-white text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
                 >
@@ -153,7 +153,7 @@ function QandAPage() {
                   <h2 className="font mt-10 text-lg font-bold">{x.name}</h2>
                 </div>
                 <PencilBorder
-                  className={`absolute bottom-4 z-30 h-full w-full overflow-auto bg-white py-2 px-4 text-left transition-transform ${
+                  className={`absolute bottom-4 z-[60] h-full w-full overflow-auto bg-white py-2 px-4 text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
                 >

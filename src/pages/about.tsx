@@ -130,11 +130,11 @@ const AboutPage = () => {
                 </div>
 
                 <PencilBorder
-                  className={`absolute bottom-4 z-30 h-full w-full overflow-y-auto text-left transition-transform ${
+                  className={`absolute bottom-4 z-30 h-full w-full text-left transition-transform ${
                     !x.clicked ? 'scale-0' : 'scale-105'
                   }`}
                 >
-                  <div className="h-full w-full bg-white">
+                  <div className="h-full w-full overflow-y-auto bg-white">
                     <div className="px-2 py-3">
                       <h1 className="font text-2xl">{x.position}</h1>
                       <p className="whitespace-pre-line">{x.desc}</p>
