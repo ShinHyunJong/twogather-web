@@ -140,7 +140,7 @@ function BottomBar() {
                     <div className="absolute top-0 left-0 h-6 w-full bg-red-400">
                       <PencilBorderBottom className="absolute bottom-[-2px] w-full"></PencilBorderBottom>
                     </div>
-                    <h1 className="font text-5xl">커밍순...</h1>
+                    <h1 className="font text-5xl">커밍쑨...</h1>
                   </div>
                 </div>
               </PencilBorder>

@@ -141,7 +141,7 @@ function MobileHomePage() {
                 <div className="absolute top-0 left-0 h-6 w-full bg-red-400">
                   <PencilBorderBottom className="absolute bottom-[-2px] left-0 z-10 w-full"></PencilBorderBottom>
                 </div>
-                <h1 className="font text-4xl">커밍순...</h1>
+                <h1 className="font text-4xl">커밍쑨...</h1>
               </div>
             </div>
           </PencilBorder>
