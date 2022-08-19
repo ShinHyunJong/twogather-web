@@ -73,12 +73,11 @@ function BottomBar() {
   const handleSound = () => {
     if (!audioRef) return;
     if (audioRef.volume !== 0) {
-      setIsMuted(true);
       audioRef.volume = 0;
     } else {
-      setIsMuted(false);
       audioRef.volume = 1;
     }
+    setIsMuted(!isMuted);
   };
 
   return (
