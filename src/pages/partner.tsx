@@ -36,6 +36,10 @@ const partners = [
     id: 7,
     value: 'tinker',
   },
+  {
+    id: 8,
+    value: 'connectArt',
+  },
 ];
 
 function PartnerItem({
