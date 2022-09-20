@@ -3,6 +3,11 @@ import HomeLayout from '@/layouts/home';
 
 const partners = [
   {
+    id: 9,
+    value: 'teddyBear',
+    isSquare: true,
+  },
+  {
     id: 0,
     value: 'queueAndMusic',
   },
@@ -39,11 +44,6 @@ const partners = [
   {
     id: 8,
     value: 'connectArt',
-  },
-  {
-    id: 9,
-    value: 'teddyBear',
-    isSquare: true,
   },
 ];
 
