@@ -43,6 +43,7 @@ const partners = [
   {
     id: 9,
     value: 'teddyBear',
+    isSquare: true,
   },
 ];
 
