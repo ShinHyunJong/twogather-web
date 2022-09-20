@@ -40,6 +40,10 @@ const partners = [
     id: 8,
     value: 'connectArt',
   },
+  {
+    id: 9,
+    value: 'teddyBear',
+  },
 ];
 
 function PartnerItem({
